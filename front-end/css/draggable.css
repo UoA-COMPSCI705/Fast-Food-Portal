@@ -1,0 +1,74 @@
+#drag-1, #drag-2, #drag-3, #drag-4 , #button-1, #button-2, #button-3, #button-4 {
+    width: 5%;
+    height: 5%;
+    margin: 1rem 0 0 1rem;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    z-index: 1;
+}
+
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 25%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 0; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: grey; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+#button-1, #button-2, #button-3, #button-4 {
+  background-color: pink; /* Green */
+  border-radius: 8px;
+  border: none;
+  color: pink;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#reset {
+  position: relative;
+  margin-right: 0;
+}
+
+#dropzone {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 75%; /* Set the width of the sidebar */
+  position: relative; /* Fixed Sidebar (stay in place on scroll) */
+  margin-left: 25%;
+  z-index: 0; /* Stay on top */
+  background-color: lightblue; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
