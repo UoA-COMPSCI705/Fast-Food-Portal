@@ -1,6 +1,57 @@
-#drag-1, #drag-2, #drag-3, #drag-4 , #button-1, #button-2, #button-3, #button-4 {
-    width: 5%;
-    height: 5%;
+#drag-1, #drag-2, #drag-3, #drag-4, #button-1, #button-2, #button-3, #button-4 {
+    width: 50%;
+    height: 20%;
+    margin: 1rem 0 0 1rem;
+    background-color: #deb887;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    z-index: 10;
+    font-family: Arial;
+    position: relative;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    font-family: Arial;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 25%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 5; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: grey; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    font-family: Arial;
+}
+
+.resize-drag {
+    width: 120px;
+    height: 120px;
     margin: 1rem 0 0 1rem;
     background-color: #29e;
     color: white;
@@ -10,44 +61,22 @@
     user-select: none;
     transform: translate(0px, 0px);
     z-index: 1;
-}
-
-
-img {
-    width: 50px;
-    height: 50px;
-}
-
-h1 {
-  font-size: 36px;
-  line-height: 40px;
-  text-align: center;
-}
-
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 25%; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 0; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: grey; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+    /* This makes things *much* easier */
+    box-sizing: border-box;
 }
 
 #button-1, #button-2, #button-3, #button-4 {
-  background-color: pink; /* Green */
-  border-radius: 8px;
-  border: none;
-  color: pink;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 2px 2px;
-  cursor: pointer;
+    background-color: #6495ed;
+    border-radius: 8px;
+    border: none;
+    color: pink;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
 }
 
 #rcorners2 {
@@ -63,12 +92,55 @@ h1 {
   margin-right: 0;
 }
 
-#dropzone {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 75%; /* Set the width of the sidebar */
-  position: relative; /* Fixed Sidebar (stay in place on scroll) */
-  margin-left: 25%;
-  z-index: 0; /* Stay on top */
-  background-color: lightblue; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+#workspace {
+    height: 100%;
+    width: 75%;
+    position: fixed;
+    left: 25%;
+    right: 1400px;
+    z-index: -1;
+}
+
+#dropzone-1 {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    z-index: 0;
+    position: relative;
+}
+
+.dropzone {
+    background-color: #bfe4ff;
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 90%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #29e;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+    margin: 1rem 0 0 1rem;
+    color: #fff;
+    background-color: #29e;
+    border: solid 2px #fff;
+    touch-action: none;
+    transform: translate(0px, 0px);
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: #4e4;
 }
