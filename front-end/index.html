@@ -12,7 +12,6 @@
 
     <div id="workspace">
         <h1 class="center-text">Burger Ordering Portal</h1>
-        <div id="dropzone-1" class="dropzone">Dropzone</div>
     </div>
 
     <div id="component-dropzone" class="sidenav">
@@ -22,40 +21,20 @@
             <button type="button" onClick="window.location.reload();">RESET</button>
         </div>
 
-        <div id="drag-1" class="resize-drag drag-drop center-text">
-            <h4>Bacon Burger</h4>
-            <img src="img/burger/cheeseburger.png" alt="beef">
+        <div id="button-bacon-burger" class="resize-drag drag-drop center">
+            <button class="button center-text" type="button" onClick="addDrag(0)">Add Bacon Burger</button>
+        </div>   
+
+        <div id="button-cheese-burger" class="resize-drag drag-drop center center-text">
+            <button class="button center-text" type="button" onClick="addDrag(1)">Add Cheese Burger</button>
         </div>
 
-        <div id="button-1" class="resize-drag drag-drop center">
-            <button class="button center-text" type="button">Add Bacon Burger</button>
+        <div id="button-chicken-burger" class="resize-drag drag-drop center center-text">
+            <button class="button center-text" type="button" onClick="addDrag(2)">Add Chicken Burger</button>
         </div>
 
-        <div id="drag-2" class="resize-drag drag-drop center center-text">
-            <h4>Cheeseburger</h4>
-            <img src="img/burger/bacon-3.png" alt="chesee">
-        </div>
-
-        <div id="button-2" class="resize-drag drag-drop center center-text">
-            <button class="button center-text" type="button">Add Cheese Burger</button>
-        </div>
-
-        <div id="drag-3" class="resize-drag drag-drop center center-text">
-            <h4>Chicken Burger</h4>
-            <img src="img/burger/hawaii-chicken.png" alt="chesee">
-        </div>
-
-        <div id="button-3" class="resize-drag drag-drop center center-text">
-            <button class="button center-text" type="button">Add Chicken Burger</button>
-        </div>
-
-        <div id="drag-4" class="resize-drag drag-drop center center-text">
-            <h4>Beef Burger</h4>
-            <img src="img/burger/beef-3.png" alt="chesee">
-        </div>
-
-        <div id="button-4" class="resize-drag drag-drop center center-text">
-            <button class="button center-text" type="button">Add Beef Burger</button>
+        <div id="button-beef-burger" class="resize-drag drag-drop center center-text">
+            <button class="button center-text" type="button" onClick="addDrag(3)">Add Beef Burger</button>
         </div>
     </div>
 

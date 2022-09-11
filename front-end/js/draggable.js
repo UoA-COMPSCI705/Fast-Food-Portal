@@ -30,6 +30,18 @@ interact('.draggable')
     }
   })
 
+function addDrag(index) {
+    if (index == 0) {
+        document.getElementById('workspace').innerHTML += '<div id="drag-bacon-burger" class="resize-drag drag-drop center-text"><h4>Bacon Burger</h4><img src="img/burger/cheeseburger.png" alt="bacon"></div>';
+    } else if (index == 1) {
+        document.getElementById('workspace').innerHTML += '<div id="drag-cheese-burger" class="resize-drag drag-drop center center-text"><h4>Cheeseburger</h4><img src="img/burger/bacon-3.png" alt="cheese"></div>';
+    } else if (index == 2) {
+        document.getElementById('workspace').innerHTML += '<div id="drag-chicken-burger" class="resize-drag drag-drop center center-text"><h4>Chicken Burger</h4><img src="img/burger/hawaii-chicken.png" alt="chicken"></div>';
+    } else if (index == 3) {
+        document.getElementById('workspace').innerHTML += '<div id="drag-beef-burger" class="resize-drag drag-drop center center-text"><h4>Beef Burger</h4><img src="img/burger/beef-3.png" alt="beef"></div>';
+    }
+}
+
 function dragMoveListener (event) {
   var target = event.target
   // keep the dragged position in the data-x/data-y attributes

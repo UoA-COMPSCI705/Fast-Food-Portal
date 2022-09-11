@@ -1,4 +1,4 @@
-#drag-1, #drag-2, #drag-3, #drag-4 {
+#drag-bacon-burger, #drag-cheese-burger, #drag-chicken-burger, #drag-beef-burger {
     width: 50%;
     height: 20%;
     margin: 1rem 0 0 1rem;
@@ -9,7 +9,6 @@
     touch-action: none;
     user-select: none;
     transform: translate(0px, 0px);
-    z-index: 10;
     font-family: Arial;
     position: relative;
 }
@@ -60,7 +59,6 @@ h1 {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 25%; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 5; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: grey; /* Black */
@@ -80,13 +78,12 @@ h1 {
     touch-action: none;
     user-select: none;
     transform: translate(0px, 0px);
-    z-index: 1;
     position: relative;
     /* This makes things *much* easier */
     box-sizing: border-box;
 }
 
-#button-1, #button-2, #button-3, #button-4 {
+#button-bacon-burger, #button-cheese-burger, #button-chicken-burger, #button-beef-burger {
     background-color: rgba(100, 149, 237, 100);
     padding: 0px;
     text-decoration: none;
@@ -114,12 +111,10 @@ h1 {
     position: fixed;
     left: 25%;
     right: 1400px;
-    z-index: -1;
 }
 
 #dropzone-1 {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    z-index: 0;
     position: relative;
 }
 
