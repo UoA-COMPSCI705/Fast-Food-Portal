@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
+    <script src="js/draggable.js"></script>
+    <link rel="stylesheet" href="css/checkout.css" type="text/css" />
+</head>
+
+<body>
+    <div id="sidebar">
+        <h1>Components</h1>
+        <div id="reset">
+            <button type="button" onClick="window.location.reload();">RESET</button>
+        </div>
+        <div id="confirm">
+            <button type="button" onClick="disableDrag()">Confirm</button>
+        </div>
+    </div>
+    <div id="workspace">
+        <h1>Checkout Terminal</h1>
+    </div>
+
+    <div id="drag-1" class="resize-drag">
+        <p> You can drag one element </p>
+      </div>
+    <div id="drag-2" class="resize-drag">
+        <p> with each pointer </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+#sidebar {
+    float: left;
+    margin-left: 0%;
+    height: 95vh;
+    width: 25vw;
+    border: solid;
+    border-color: aquamarine;
+    text-align: center;
+}
+
+#workspace {
+    padding-left: 2vw;
+    float: left;
+    height: 95vh;
+    width: 70vw;
+    border: solid;
+    border-color: red;
+    text-align: center;
+}
+
+.resize-drag {
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 15vw;
+    height: 5vw;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    z-index: 1;
+    
+    box-sizing: border-box;
+}
+
+#drag-1{
+    top: 15%;
+}
+
+#drag-2{
+    top: 30%;
+}
+
+body{
+    position: absolute;
+    border: solid;
+    border-color: purple;
+    height: 95vh;
+}
+
+html,body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
