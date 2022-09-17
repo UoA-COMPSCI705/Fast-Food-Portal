@@ -157,8 +157,5 @@ interact('.dropzone')
     })
 
 function disableDrag() {
-    var elements = document.getElementsByClassName("resize-drag");
-    for(var i=0; i<elements.length; i++) {
-        elements[i].classList.remove("resize-drag");;
-    }
+    interact('.resize-drag').draggable(false).resizable(false);
 }
