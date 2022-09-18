@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
+
 #drag-bacon-burger, #drag-cheese-burger, #drag-chicken-burger, #drag-beef-burger {
     width: 50%;
     height: 20%;
@@ -55,7 +57,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.sidenav {
+#sidebar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 25%; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
@@ -63,7 +65,6 @@ h1 {
     left: 0;
     background-color: grey; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
     font-family: Arial;
 }
 
