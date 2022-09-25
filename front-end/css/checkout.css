@@ -187,6 +187,7 @@ body {
 }
 
 .order-item {
+  top: 555px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -215,7 +216,7 @@ hr {
 
 .details {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .details img {
@@ -344,6 +345,11 @@ hr {
     box-sizing: border-box;
 }
 
+.resize-drag:hover {
+  border: solid;
+  border-color: red;
+}
+
 #header{
     padding: 10px;
 }
@@ -353,10 +359,12 @@ hr {
 }
 
 #beef-burger{
+    z-index: 10;
     top: 90px;
 }
 
 #chicken-burger{
+    z-index: 10;
     top: 90px;
     left: 14.5%;
 }
@@ -364,3 +372,120 @@ hr {
 #order-menu{
     top: 325px;
 }
+
+#hold-order-btn{
+  top: 650px;
+  height: 50px;
+  z-index: 10;
+}
+
+#check-out-btn{
+  top: 650px;
+  left: 150px;
+  height: 50px;
+  z-index: 10;
+}
+
+.modal{
+  --gap: 15px;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 30vw;
+  height: 40vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--gap);
+  background-color: transparent;
+  color: #000;
+}
+
+.modal__inner {
+  background:000000;
+  color: #000;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.modal__top {
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  background: rgb(88, 95, 99);
+}
+
+.modal__title {
+  flex-grow: 1;
+  padding: 0 var(--gap);
+  font-size: 20px;
+}
+
+.modal__close {
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--gap);
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.modal__content {
+  color: #000;
+  padding: 0 var(--gap);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__bottom {
+  color: #000;
+  text-align: right;
+  padding: 0 var(--gap) var(--gap) var(--gap);
+}
+
+.modal__button {
+  color: #000;
+  display: inline-block;
+  padding: 6px 12px;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modal__button:not(:last-child) {
+  margin-right: var(--gap);
+}
+
+.modal__button:hover {
+  background: #008066;
+}
+
+#addings {
+  z-index: 10;
+}
+
+#adding-drink {
+  background-color: transparent;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 220px;
+}
+
+#adding-fries {
+  background-color: transparent;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 220px;
+}
+

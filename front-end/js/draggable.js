@@ -159,3 +159,13 @@ interact('.dropzone')
 function disableDrag() {
     interact('.resize-drag').draggable(false).resizable(false);
 }
+
+var modal = document.getElementById("addings");
+
+function openModal() {
+    document.getElementById("addings").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("addings").style.display = "none";
+}

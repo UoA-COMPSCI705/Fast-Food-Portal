@@ -42,6 +42,12 @@
         </div>
         <button type="button">&#43;</button>
     </div>
+    <div id="hold-order-btn" class="resize-drag checkout-detail" >
+        <button type="button" class="btn-md outline">hold order</button>
+    </div>
+    <div id="check-out-btn" class="resize-drag checkout-detail">
+        <button type="button" class="btn-md fill">checkout</button>
+    </div>
     <div id="order-menu" class="resize-drag order">
         <div class="order-list">
             <h3>Order Summary</h3>
@@ -63,9 +69,49 @@
                     <h3>$0</h3>
                 </div>
             </div>
-            <div class="checkout-detail">
-                <button type="button" class="btn-md outline">hold order</button>
-                <button type="button" class="btn-md fill">checkout</button>
+        </div>
+    </div>
+    <div class="order-item resize-drag">
+        <div class="details">
+            <img src="img/burger/beef-2.png">
+            <div class="detail-item">
+                <h5 style="margin-bottom:10px">beef burger 2</h5>
+                <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
+                <small>1</small>
+                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
+            </div>
+        </div>
+        <h2 class="price">$5.9</h2>
+    </div>
+    <div class="modal resize-drag" id="addings">
+        <div class="modal__inner">
+            <div class="modal__top">
+                <div class="modal__title">${titleHtml}</div>
+                <button class="modal__close" type="button" onclick="closeModal()">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <div class="modal__content">
+                <div id="adding-fries" class="menu">
+                    <img src="img/fries/fries-2.png" alt="beef">
+                    <h2 class="price">$4.7</h2>
+                    <div class="desc-item">
+                        <h3>Beef burger 2</h3>
+                        <p>special burger with beef hot sausage</p>
+                    </div>
+                    <button type="button">&#43;</button>
+                </div>
+        
+                <div id="adding-drink" class="menu">
+                    <img src="img/drink/coca-cola.png" alt="beef">
+                    <h2 class="price">$4.7</h2>
+                    <div class="desc-item">
+                        <h3>Beef burger 2</h3>
+                        <p>special burger with beef hot sausage</p>
+                    </div>
+                    <button type="button">&#43;</button>
+                </div>
             </div>
         </div>
     </div>
