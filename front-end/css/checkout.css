@@ -20,7 +20,7 @@ body {
     float: left;
     margin-left: 0%;
     height: 100vh;
-    width: 30vw;
+    width: 21vw;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     padding-left: 2vw;
     float: left;
     height: 100vh;
-    width: 70vw;
+    width: 79vw;
     text-align: center;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
@@ -41,9 +41,8 @@ body {
 .menu {
   /* border: 1px solid #fff; */
   float: left;
-  width: 13.5%;
-  height: 220px;
-  min-height: 220px;
+  width: 9%;
+  height: 15%;
   padding: 13px;
   text-transform: capitalize;
   font-size: 13px;
@@ -62,9 +61,9 @@ body {
 
 .menu img {
   position: absolute;
-  bottom: 60px;
-  left: 45px;
-  width: 130px;
+  top: 20%;
+  left: 25%;
+  width: 50%;
   margin-bottom: 8px;
   transform: rotate(-5deg);
   filter: drop-shadow(0 10px 15px rgba(38, 43, 47, 0.7));
@@ -144,9 +143,8 @@ body {
 
 .order {
   float: right;
-  width: 28%;
-  min-height: 220px;
-  height: 220px;
+  width: 19%;
+  height: 20%;
 }
 
 .order-list {
@@ -353,14 +351,41 @@ hr {
 }
 
 #beef-burger{
-    top: 90px;
+    top: 10%;
 }
 
 #chicken-burger{
-    top: 90px;
-    left: 14.5%;
+    top: 10%;
+    left: 10%;
+}
+
+#bacon-burger{
+    top: 27%;
+}
+
+#cheese-burger{
+    top: 27%;
+    left: 10%;
+}
+
+#chicken-deluxe{
+    top: 44%;
+}
+
+#fries{
+    top: 44%;
+    left: 10%;
+}
+
+#hot-fries{
+    top: 61%;
+}
+
+#coca-cola{
+    top: 61%;
+    left: 10%;
 }
 
 #order-menu{
-    top: 325px;
+    top: 78%;
 }
