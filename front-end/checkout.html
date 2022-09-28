@@ -31,7 +31,7 @@
             <h3>Beef burger</h3>
             <p>special burger with beef hot sausage</p>
         </div>
-        <button type="button">&#43;</button>
+        <button type="button" onClick="addItemMenu(0)">&#43;</button>
     </div>
     <div id="chicken-burger" class="resize-drag menu">
         <img src="img/burger/double-chicken.png" alt="chicken">
@@ -58,7 +58,7 @@
             <h3>cheese burger</h3>
             <p>special cheese burger with xtra cheese</p>
         </div>
-        <button type="button">&#43;</button>
+        <button type="button" onClick="addItemMenu(1)">&#43;</button>
     </div>
     <div id="chicken-deluxe" class="resize-drag menu">
         <img src="img/chicken/deluxe-2.png" alt="thighs">
@@ -76,7 +76,7 @@
             <h3>French fries original</h3>
             <p>kentang goreng crispy original </p>
         </div>
-        <button type="button">&#43;</button>
+        <button type="button" onClick="addItemMenu(2)">&#43;</button>
     </div>
     <div id="hot-fries" class="resize-drag menu">
         <img src="img/fries/hot-fries.png" alt="hot">
@@ -94,13 +94,13 @@
             <h3>Coca cola drink</h3>
             <p>minuman segar bersoda </p>
         </div>
-        <button type="button">&#43;</button>
+        <button type="button" onClick="addItemMenu(3)">&#43;</button>
     </div>
     <div id="order-menu" class="resize-drag order">
         <div class="order-list">
             <h3>Order Summary</h3>
             <hr>
-            <div class="order-inner">
+            <div id="menu-list" class="order-inner">
                 <div class="order-null">
                     <i class="fas fa-clipboard-list"></i>
                     <p>belum ada pesanan</p>

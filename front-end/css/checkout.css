@@ -346,8 +346,11 @@ hr {
     padding: 10px;
 }
 
-#controls{
-    bottom: 10%;
+#timer{
+    margin: 1%;
+    bottom: 0%;
+    position: absolute;
+    font-size: 2em;
 }
 
 #beef-burger{

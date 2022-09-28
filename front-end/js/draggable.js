@@ -156,6 +156,65 @@ interact('.dropzone')
         }
     })
 
+let taskMode = false;
+let taskComplete = false;
+let beefCounter = 1;
+let cheeseCounter = 2;
+let friesCounter = 1;
+let colaCounter = 2;
+let timer = 0;
+
+setInterval(myTimer, 10);
+
+function myTimer() {
+  if (taskMode && taskMode == false) {
+    timer += 1;
+    document.getElementById("timer").innerHTML = 'Timer: ' + timer/100 + 's';
+    if (beefCounter <= 0 && cheeseCounter <= 0 && friesCounter <= 0 && colaCounter <= 0) {
+      taskComplete = true;
+      alert('The task is completed... You did it in ' + timer/100 + 's. Great work!');
+    }
+  }
+}
+
+function addItemMenu(id) {
+  if (taskMode) {
+    if (id == 0) {
+      document.getElementById('menu-list').innerHTML += '<div class="order-item"><div class="details"><img src="img/burger/beef.png"><div class="detail-item"><h5 style="margin-bottom:10px">beef burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.7</h2></div>';
+      beefCounter -= 1;
+      if (beefCounter == 0) {
+        document.getElementById('beef-burger-task').innerHTML = '1̶x̶ ̶B̶e̶e̶f̶ ̶B̶u̶r̶g̶e̶r̶';
+      }
+    } else if (id == 1) {
+      document.getElementById('menu-list').innerHTML += '<div class="order-item"><div class="details"><img src="img/burger/cheeseburger.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chese Burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
+      cheeseCounter -= 1;
+      if (cheeseCounter == 0) {
+        document.getElementById('cheese-burger-task').innerHTML = '2̶x̶ ̶C̶h̶e̶e̶s̶e̶ ̶B̶u̶r̶g̶e̶r̶s̶';
+      }
+    } else if (id == 2) {
+      document.getElementById('menu-list').innerHTML += '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
+      friesCounter -= 1;
+      if (friesCounter == 0) {
+        document.getElementById('french-fries-task').innerHTML = '1̶x̶ ̶F̶r̶e̶n̶c̶h̶ ̶F̶r̶i̶e̶s̶ ̶O̶r̶i̶g̶i̶n̶a̶l̶';
+      }
+    } else if (id == 3) {
+      document.getElementById('menu-list').innerHTML += '<div class="order-item"><div class="details"><img src="img/drink/coca-cola.png"><div class="detail-item"><h5 style="margin-bottom:10px">Coca Cola Drink</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
+      colaCounter -= 1;
+      if (colaCounter == 0) {
+        document.getElementById('coca-cola-task').innerHTML = '2̶x̶ ̶C̶o̶c̶a̶ ̶C̶o̶l̶a̶ ̶D̶r̶i̶n̶k̶';
+      }
+    }
+  }
+}
+
 function disableDrag() {
     interact('.resize-drag').draggable(false).resizable(false);
+    alert("You are now entering the testing phase of your design. You will be timed while completing a simple task.")
+    document.getElementById('controls').innerHTML = 'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger</p><p id="cheese-burger-task">2x Cheese Burgers</p><p id="french-fries-task">1x French Fries Original</p><p id="coca-cola-task">2x Coca Cola Drink</p>';
+    document.getElementById('controls').style.lineHeight = '1.6';
+    document.getElementById('header').innerHTML = 'Task to Complete';
+    document.getElementById('controls').style.lineHeight = '1.6';
+    taskMode = true;
+    document.getElementById('menu-list').innerHTML = '';
+    document.getElementById('sidebar').innerHTML += '<div id="timer">Timer: 0.00s</div>';
 }
