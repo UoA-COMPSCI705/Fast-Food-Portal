@@ -415,6 +415,7 @@ hr {
 .modal__top {
   color: #FFFFFF;
   display: flex;
+  text-align: center;
   align-items: center;
   background: rgb(88, 95, 99);
 }
@@ -487,5 +488,24 @@ hr {
   margin-left: 10px;
   margin-top: 10px;
   width: 220px;
+}
+
+#custom-button-close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  outline: none;
+  border: none;
+  color: #31363a;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #e3a34c;
+  right: 18px;
+  padding-left: 9px;
+  padding-bottom: 17px;
+  bottom: 15px;
+  cursor: pointer;
+  box-shadow: 1px 5px 12px rgba(38, 43, 47, 0.8);
 }
 

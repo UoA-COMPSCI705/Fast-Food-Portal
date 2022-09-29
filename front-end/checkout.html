@@ -24,24 +24,8 @@
     <div id="workspace">
         <h1 id="header">Checkout Terminal</h1>
     </div>
-    <div id="beef-burger" class="resize-drag menu">
-        <img src="img/burger/beef-2.png" alt="beef">
-        <h2 class="price">$4.7</h2>
-        <div class="desc-item">
-            <h3>Beef burger 2</h3>
-            <p>special burger with beef hot sausage</p>
-        </div>
-        <button type="button">&#43;</button>
-    </div>
-    <div id="chicken-burger" class="resize-drag menu">
-        <img src="img/chicken/deluxe-1.png" alt="thighs">
-        <h2 class="price">$5.2</h2>
-        <div class="desc-item">
-            <h3>Chicken deluxe</h3>
-            <p>paket special deluxe paha ayam </p>
-        </div>
-        <button type="button">&#43;</button>
-    </div>
+    
+   
     <div id="hold-order-btn" class="resize-drag checkout-detail" >
         <button type="button" class="btn-md outline">hold order</button>
     </div>
@@ -55,7 +39,7 @@
             <div class="order-inner">
                 <div class="order-null">
                     <i class="fas fa-clipboard-list"></i>
-                    <p>belum ada pesanan</p>
+                    <p>Drag Cart Items Here</p>
                 </div>
             </div>
             <hr>
@@ -71,44 +55,73 @@
             </div>
         </div>
     </div>
-    <div class="order-item resize-drag">
+    <div id="orderitem3" class="order-item resize-drag">
         <div class="details">
             <img src="img/burger/beef-2.png">
             <div class="detail-item">
                 <h5 style="margin-bottom:10px">beef burger 2</h5>
-                <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
+                <!-- <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
                 <small>1</small>
-                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a>
+                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a> -->
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem3()">Remove</a>
                 <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
             </div>
         </div>
-        <h2 class="price">$5.9</h2>
+        <h2 class="price">$4.90</h2>
+    </div>
+    <div id="orderitem2" class="order-item resize-drag">
+        <div class="details">
+            <img src="img/burger/hawaii-chicken.png">
+            <div class="detail-item">
+                <h5 style="margin-bottom:10px">Hawaii Chicken</h5>
+                <!-- <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
+                <small>1</small>
+                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a> -->
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem2()">Remove</a>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
+            </div>
+        </div>
+        <h2 class="price">$5.90</h2>
+    </div>
+    <div id="orderitem1" class="order-item resize-drag">
+        <div class="details">
+            <img src="img/burger/cheeseburger-2.png">
+            <div class="detail-item">
+                <h5 style="margin-bottom:10px">Cheeseburger</h5>
+                <!-- <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
+                <small>1</small>
+                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a> -->
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem1()">Remove</a>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
+            </div>
+        </div>
+        <h2 class="price">$3.00</h2>
     </div>
     <div class="modal resize-drag" id="addings">
         <div class="modal__inner">
             <div class="modal__top">
-                <div class="modal__title">${titleHtml}</div>
-                <button class="modal__close" type="button" onclick="closeModal()">
-                    <span class="material-icons">close</span>
+                <!-- <div class="modal__title">${titleHtml}</div> -->
+                <button id="custom-button-close" class="modal__close" type="button" onclick="closeModal()">
+                    <span class="material-icons">x</span>
                 </button>
             </div>
             <div class="modal__content">
                 <div id="adding-fries" class="menu">
                     <img src="img/fries/fries-2.png" alt="beef">
-                    <h2 class="price">$4.7</h2>
+                    <h2 class="price">$2.50</h2>
                     <div class="desc-item">
-                        <h3>Beef burger 2</h3>
-                        <p>special burger with beef hot sausage</p>
+                        <h3>Fries</h3>
+                        
                     </div>
                     <button type="button">&#43;</button>
                 </div>
         
                 <div id="adding-drink" class="menu">
                     <img src="img/drink/coca-cola.png" alt="beef">
-                    <h2 class="price">$4.7</h2>
+                    <h2 class="price">$1.50</h2>
                     <div class="desc-item">
-                        <h3>Beef burger 2</h3>
-                        <p>special burger with beef hot sausage</p>
+                        <h3>Coke</h3>
+                    
                     </div>
                     <button type="button">&#43;</button>
                 </div>

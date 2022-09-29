@@ -1,3 +1,4 @@
+let totprice = 13.8
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -168,4 +169,13 @@ function openModal() {
 
 function closeModal() {
     document.getElementById("addings").style.display = "none";
+}
+function removeitem1(){
+    document.getElementById("orderitem1").style.display = "none";
+}
+function removeitem2(){
+  document.getElementById("orderitem2").style.display = "none";
+}
+function removeitem3(){
+  document.getElementById("orderitem3").style.display = "none";
 }
