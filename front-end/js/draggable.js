@@ -1,4 +1,6 @@
 let totprice = 13.8
+let coke = 0
+let chips = 0
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -159,6 +161,10 @@ interact('.dropzone')
 
 function disableDrag() {
     interact('.resize-drag').draggable(false).resizable(false);
+    document.getElementById('TotalCheckoutPrice').innerHTML = "$" + totprice;
+    document.getElementById('inputPrompt').innerHTML = "";
+    document.getElementById('chipcount').innerHTML= chips;
+    document.getElementById('colacount').innerHTML= cola;
 }
 
 var modal = document.getElementById("addings");
@@ -178,4 +184,12 @@ function removeitem2(){
 }
 function removeitem3(){
   document.getElementById("orderitem3").style.display = "none";
+}
+function addCoke(){
+  coke += 1;
+  totprice += 1.5;
+}
+function addFries(){
+  chips += 1;
+  totprice += 2.5;
 }

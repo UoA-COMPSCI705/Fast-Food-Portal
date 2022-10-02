@@ -39,18 +39,25 @@
             <div class="order-inner">
                 <div class="order-null">
                     <i class="fas fa-clipboard-list"></i>
-                    <p>Drag Cart Items Here</p>
+                    <p id="inputPrompt">Drag Cart Items Into Here</p>
                 </div>
             </div>
             <hr>
             <div class="checkout">
                 <div class="checkout-detail" id="qty">
-                    <h5>0 item(s)</h5>
-                    <h5>qty: <span>0</span></h5>
+                    <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
+                    <small id="chipcount">1</small>
+                    <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a>
+                    <p id="sideCount">Fries</p>
+                    <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
+                    <small id="colacount">1</small>
+                    <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a>
+                    <p id="sideCount">Coca Cola</p>
+    
                 </div>
                 <div class="checkout-detail" id="total">
-                    <h3>Total</h3>
-                    <h3>$0</h3>
+                    <h3>Total (Qty: 3)</h3>
+                    <h3 id="TotalCheckoutPrice">$0</h3>
                 </div>
             </div>
         </div>
@@ -88,9 +95,6 @@
             <img src="img/burger/cheeseburger-2.png">
             <div class="detail-item">
                 <h5 style="margin-bottom:10px">Cheeseburger</h5>
-                <!-- <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
-                <small>1</small>
-                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a> -->
                 <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem1()">Remove</a>
                 <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
             </div>
@@ -113,7 +117,7 @@
                         <h3>Fries</h3>
                         
                     </div>
-                    <button type="button">&#43;</button>
+                    <button type="button" onclick="addFries()">&#43;</button>
                 </div>
         
                 <div id="adding-drink" class="menu">
@@ -123,7 +127,7 @@
                         <h3>Coke</h3>
                     
                     </div>
-                    <button type="button">&#43;</button>
+                    <button type="button" onclick="addCoke()">&#43;</button>
                 </div>
             </div>
         </div>
