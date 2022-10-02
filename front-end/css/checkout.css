@@ -61,11 +61,10 @@ body {
 }
 
 .menu img {
-  position: absolute;
-  bottom: 60px;
-  left: 45px;
-  width: 130px;
-  margin-bottom: 8px;
+  position: relative;
+  width: 60%;
+  margin-top: 20%;
+  margin-left: 0px;
   transform: rotate(-5deg);
   filter: drop-shadow(0 10px 15px rgba(38, 43, 47, 0.7));
   transition: 0.3s ease-out;
@@ -358,19 +357,23 @@ hr {
     bottom: 10%;
 }
 
-#beef-burger{
+#orderitem1{
     z-index: 10;
-    top: 90px;
+    top: 325px;
 }
 
-#chicken-burger{
-    z-index: 10;
-    top: 90px;
-    left: 14.5%;
+#orderitem2{
+  z-index: 10;
+  top: 425px;
+}
+
+#orderitem3{
+  z-index: 10;
+  top: 525px;
 }
 
 #order-menu{
-    top: 325px;
+    top: 100px;
 }
 
 #hold-order-btn{
