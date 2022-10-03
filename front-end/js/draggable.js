@@ -100,9 +100,9 @@ interact('.resize-drag')
       }),
 
       // minimum size
-      interact.modifiers.restrictSize({
-        min: { width: 100, height: 50 }
-      })
+      // interact.modifiers.restrictSize({
+      //   min: { width: 100, height: 50 }
+      // })
     ],
 
     inertia: true
@@ -225,13 +225,20 @@ function removeitem2(){
 function removeitem3(){
   document.getElementById("orderitem3").style.display = "none";
 }
+
+function removeCoke(){
+  document.getElementById("coke").style.display = "none";
+}
+
+function removeFries(){
+  document.getElementById("fries").style.display = "none";
+}
+
 function addCoke(){
-  coke += 1;
-  totprice += 1.5;
+  document.getElementById("coke").style.display = null;
 }
 function addFries(){
-  chips += 1;
-  totprice += 2.5;
+  document.getElementById("fries").style.display = null;
 }
 
 function finish(){

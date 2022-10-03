@@ -11,6 +11,7 @@
     <script src="js/draggable.js"></script>
     
     <link rel="stylesheet" href="css/checkout.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -26,11 +27,11 @@
     </div>
     
    
-    <div id="hold-order-btn" class="resize-drag checkout-detail" >
+    <!-- <div id="hold-order-btn" class="resize-drag checkout-detail" >
         <button type="button" class="btn-md outline">hold order</button>
-    </div>
+    </div> -->
     <div id="check-out-btn" class="resize-drag checkout-detail">
-        <button type="button" class="btn-md fill">checkout</button>
+        <button type="button" class="btn-md fill" id="checkout-btn">checkout</button>
     </div>
     <div id="order-menu" class="resize-drag order">
         <div class="order-list">
@@ -67,39 +68,51 @@
             <img src="img/burger/beef-2.png">
             <div class="detail-item">
                 <h5 style="margin-bottom:10px">beef burger 2</h5>
-                <!-- <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
-                <small>1</small>
-                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a> -->
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem3()">Remove</a>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
+                <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem3()">Remove</a>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
             </div>
         </div>
         <h2 class="price">$4.90</h2>
+        <div id="add-btn-3-div" class="resize-drag">
+            <button class="add-btn">&#43;</button>
+        </div>
+        <div id="edit-btn-3-div" class="resize-drag">
+            <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+        </div>
     </div>
     <div id="orderitem2" class="order-item resize-drag">
         <div class="details">
             <img src="img/burger/hawaii-chicken.png">
             <div class="detail-item">
                 <h5 style="margin-bottom:10px">Hawaii Chicken</h5>
-                <!-- <a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a>
-                <small>1</small>
-                <a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a> -->
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem2()">Remove</a>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
+                <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem2()">Remove</a>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
             </div>
         </div>
         <h2 class="price">$5.90</h2>
+        <div id="add-btn-2-div" class="resize-drag">
+            <button class="add-btn">&#43;</button>
+        </div>
+        <div id="edit-btn-2-div" class="resize-drag">
+            <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+        </div>
     </div>
     <div id="orderitem1" class="order-item resize-drag">
         <div class="details">
             <img src="img/burger/cheeseburger-2.png">
             <div class="detail-item">
                 <h5 style="margin-bottom:10px">Cheeseburger</h5>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem1()">Remove</a>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a>
+                <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem1()">Remove</a>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
             </div>
         </div>
         <h2 class="price">$3.00</h2>
+        <div id="add-btn-1-div" class="resize-drag">
+            <button class="add-btn">&#43;</button>
+        </div>
+        <div id="edit-btn-1-div" class="resize-drag">
+            <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+        </div>
     </div>
     <div class="modal resize-drag" id="addings">
         <div class="modal__inner">
@@ -125,12 +138,35 @@
                     <h2 class="price">$1.50</h2>
                     <div class="desc-item">
                         <h3>Coke</h3>
-                    
                     </div>
                     <button type="button" onclick="addCoke()">&#43;</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="coke" class="order-item resize-drag" style="display: none;">
+        <div class="details">
+            <img src="img/drink/coca-cola.png" style="width: 50px;">
+            <div class="detail-item">
+                <h5 style="margin-bottom:10px">Sides added: Coke</h5>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeCoke()">Remove</a>
+                <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
+            </div>
+        </div>
+        <h2 class="price">$1.50</h2>
+    </div>
+
+    <div id="fries" class="order-item resize-drag" style="display: none;">
+        <div class="details">
+            <img src="img/fries/fries-2.png" style="width: 70px;">
+            <div class="detail-item">
+                <h5 style="margin-bottom:10px">Sides added: Fries</h5>
+                <a id="edit" class="remove" href="javascript:void(0)" onclick="removeFries()">Remove</a>
+                <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
+            </div>
+        </div>
+        <h2 class="price">$2.50</h2>
     </div>
 </body>
 
