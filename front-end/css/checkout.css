@@ -219,7 +219,7 @@ hr {
 }
 
 .details img {
-  width: 70px;
+  width: 20%;
   object-fit: contain;
 }
 
@@ -512,3 +512,9 @@ hr {
   box-shadow: 1px 5px 12px rgba(38, 43, 47, 0.8);
 }
 
+#timer {
+  margin: 1%;
+  bottom: 0%;
+  position: absolute;
+  font-size: 2em;
+}
