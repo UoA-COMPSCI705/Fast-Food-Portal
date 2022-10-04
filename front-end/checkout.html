@@ -74,7 +74,7 @@
         </div>
         <h2 class="price">$4.90</h2>
         <div id="add-btn-3-div" class="resize-drag">
-            <button class="add-btn">&#43;</button>
+            <button class="add-btn" onclick="opensesameModal()">&#43;</button>
         </div>
         <div id="edit-btn-3-div" class="resize-drag">
             <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
@@ -91,7 +91,7 @@
         </div>
         <h2 class="price">$5.90</h2>
         <div id="add-btn-2-div" class="resize-drag">
-            <button class="add-btn">&#43;</button>
+            <button class="add-btn" onclick="opensesameModal()">&#43;</button>
         </div>
         <div id="edit-btn-2-div" class="resize-drag">
             <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
@@ -108,7 +108,7 @@
         </div>
         <h2 class="price">$3.00</h2>
         <div id="add-btn-1-div" class="resize-drag">
-            <button class="add-btn">&#43;</button>
+            <button class="add-btn" onclick="opensesameModal()">&#43;</button>
         </div>
         <div id="edit-btn-1-div" class="resize-drag">
             <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
@@ -138,6 +138,37 @@
                     <h2 class="price">$1.50</h2>
                     <div class="desc-item">
                         <h3>Coke</h3>
+                    </div>
+                    <button type="button" onclick="addCoke()">&#43;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal resize-drag" id="addings2">
+        <div class="modal__inner">
+            <div class="modal__top">
+                <!-- <div class="modal__title">${titleHtml}</div> -->
+                <button id="custom-button-close" class="modal__close" type="button" onclick="closeModal2()">
+                    <span class="material-icons">x</span>
+                </button>
+            </div>
+            <div class="modal__content">
+                <div id="adding-fries" class="menu">
+                    <img src="img/addon/CheeseSlice.png" alt="beef">
+                    <h2 class="price">$0.70</h2>
+                    <div class="desc-item">
+                        <h3>Cheese</h3>
+                        
+                    </div>
+                    <button type="button" onclick="addFries()">&#43;</button>
+                </div>
+        
+                <div id="adding-drink" class="menu">
+                    <img src="img/addon/Pickles.png" alt="beef">
+                    <h2 class="price">$0.50</h2>
+                    <div class="desc-item">
+                        <h3>Pickles</h3>
                     </div>
                     <button type="button" onclick="addCoke()">&#43;</button>
                 </div>

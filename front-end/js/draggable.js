@@ -198,7 +198,7 @@ function disableDrag() {
       "You are now entering the testing phase of your design. You will be timed while completing a simple task."
     );
     document.getElementById("controls").innerHTML =
-      'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger</p><p id="cheese-burger-task">2x Cheese Burgers</p><p id="french-fries-task">1x French Fries Original</p><p id="coca-cola-task">2x Coca Cola Drink</p>';
+      'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger w/ Cheese s/ Coke</p><p id="cheese-burger-task">2x Cheese Burger w/ Chips</p><p id="french-fries-task">1x French Fries Original</p>';
     document.getElementById("controls").style.lineHeight = "1.6";
     document.getElementById("header").innerHTML = "Task to Complete";
     document.getElementById("controls").style.lineHeight = "1.6";
@@ -216,10 +216,19 @@ function openModal() {
       document.getElementById("addings").style.display = "block";
     }
     }
+
+function opensesameModal() {
+  if (confirmed){
+    document.getElementById("addings2").style.display = "block";
+  }
+}
    
 
 function closeModal() {
     document.getElementById("addings").style.display = "none";
+}
+function closeModal2() {
+  document.getElementById("addings2").style.display = "none";
 }
 function removeitem1(){
     document.getElementById("orderitem1").style.display = "none";
