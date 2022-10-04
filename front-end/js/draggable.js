@@ -1,6 +1,7 @@
 let totprice = 13.8
 let coke = 0
 let chips = 0
+let confirmed = false
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -189,6 +190,7 @@ function disableDrag() {
     interact('.resize-drag').draggable(false).resizable(false);
     document.getElementById('TotalCheckoutPrice').innerHTML = "$" + totprice;
     document.getElementById('inputPrompt').innerHTML = "";
+    confirmed = true;
     // document.getElementById('chipcount').innerHTML= chips;
     // document.getElementById('colacount').innerHTML= cola;
 
@@ -210,8 +212,11 @@ function disableDrag() {
 var modal = document.getElementById("addings");
 
 function openModal() {
-    document.getElementById("addings").style.display = "block";
-}
+    if (confirmed){
+      document.getElementById("addings").style.display = "block";
+    }
+    }
+   
 
 function closeModal() {
     document.getElementById("addings").style.display = "none";
