@@ -31,7 +31,7 @@
         <button type="button" class="btn-md outline">hold order</button>
     </div> -->
     <div id="check-out-btn" class="resize-drag checkout-detail">
-        <button type="button" class="btn-md fill" id="checkout-btn">checkout</button>
+        <button type="button" class="btn-md fill" id="checkout-btn" onclick="finish()">checkout</button>
     </div>
     <div id="order-menu" class="resize-drag order">
         <div class="order-list">
@@ -45,20 +45,9 @@
             </div>
             <hr>
             <div class="checkout">
-                <div class="checkout-detail" id="qty">
-                    <a href="javascript:void(0)" onclick="btnMinusOrder(event)" style="text-decoration: none; color: orange;">-</a>
-                    <small id="chipcount">1</small>
-                    <a href="javascript:void(0)" onclick="btnPlusOrder(event)" style="text-decoration: none; color: orange;">+</a>
-                    <p id="sideCount">Fries</p>
-                    <a href="javascript:void(0)" onclick="btnMinusOrder(event)" style="text-decoration: none; color: orange;">-</a>
-                    <small id="colacount">1</small>
-                    <a href="javascript:void(0)" onclick="btnPlusOrder(event)" style="text-decoration: none; color: orange;">+</a>
-                    <p id="sideCount">Coca Cola</p>
-    
-                </div>
                 <div class="checkout-detail" id="total">
                     <h3>Total (Qty: 3)</h3>
-                    <h3 id="TotalCheckoutPrice">$0</h3>
+                    <h3 id="TotalCheckoutPrice">$13.8</h3>
                 </div>
             </div>
         </div>
@@ -161,7 +150,7 @@
                         <h3>Cheese</h3>
                         
                     </div>
-                    <button type="button" onclick="addFries()">&#43;</button>
+                    <button type="button" onclick="addCheese()">&#43;</button>
                 </div>
         
                 <div id="adding-drink" class="menu">
@@ -170,7 +159,7 @@
                     <div class="desc-item">
                         <h3>Pickles</h3>
                     </div>
-                    <button type="button" onclick="addCoke()">&#43;</button>
+                    <button type="button" onclick="addPickles()">&#43;</button>
                 </div>
             </div>
         </div>

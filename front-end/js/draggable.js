@@ -198,7 +198,7 @@ function disableDrag() {
       "You are now entering the testing phase of your design. You will be timed while completing a simple task."
     );
     document.getElementById("controls").innerHTML =
-      'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger w/ Cheese s/ Coke</p><p id="cheese-burger-task">2x Cheese Burger w/ Chips</p><p id="french-fries-task">1x French Fries Original</p>';
+      'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger w/ Cheese s/ Coke</p><p id="cheese-burger-task">2x Cheese Burger w/ Chips</p><p id="french-fries-task">Hawaii Chicken w/ Pickles w/ Cheese</p>';
     document.getElementById("controls").style.lineHeight = "1.6";
     document.getElementById("header").innerHTML = "Task to Complete";
     document.getElementById("controls").style.lineHeight = "1.6";
@@ -249,12 +249,32 @@ function removeFries(){
 }
 
 function addCoke(){
-  document.getElementById("coke").style.display = null;
+  // document.getElementById("coke").style.display = null;
+  totprice += 1.5;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
 }
 function addFries(){
-  document.getElementById("fries").style.display = null;
+  // document.getElementById("fries").style.display = null;
+  totprice += 2.5;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
+}
+function addCheese(){
+  // document.getElementById("coke").style.display = null;
+  totprice += 0.7;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
+}
+function addPickles(){
+  // document.getElementById("fries").style.display = null;
+  totprice += 0.5;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
 }
 
 function finish(){
-  taskComplete = true;
+  if (confirmed){
+    taskComplete = true;
+    let timesec = timer/100;
+    document.getElementById('controls').innerHTML = "Well Done! You completed the task in " + timesec + " seconds. Onto the next one.";
+  }
+    
+  
 }
