@@ -168,6 +168,24 @@ let friesCounter = 1;
 let colaCounter = 2;
 let timer = 0;
 
+function stage2Alert() {
+  alert("Tips: To achieve better user experience,we introduced EnableModal button at this stage.\nThis button will enable the functionalities of the two buttons inside of each order items. Please click this button after finishing design the interface, there will be two more modals for you to re-design. Enjoy the task.")
+}
+
+window.onload = stage2Alert();
+
+function enableModalListener() {
+  const editButtons = document.querySelectorAll(".edit-item");
+  editButtons.forEach(editButton => {
+    editButton.addEventListener("click", opensesameModal);
+  })
+
+  const addButtons = document.querySelectorAll(".add-size");
+  addButtons.forEach(addButton => {
+    addButton.addEventListener("click", openModal);
+  })
+}
+
 setInterval(myTimer, 10);
 
 function myTimer() {
@@ -211,16 +229,14 @@ function disableDrag() {
 
 var modal = document.getElementById("addings");
 
+
+
 function openModal() {
-    if (confirmed){
-      document.getElementById("addings").style.display = "block";
-    }
-    }
+  document.getElementById("addings").style.display = "block";
+}
 
 function opensesameModal() {
-  if (confirmed){
-    document.getElementById("addings2").style.display = "block";
-  }
+  document.getElementById("addings2").style.display = "block";
 }
    
 

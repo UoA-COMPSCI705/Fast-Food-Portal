@@ -481,6 +481,14 @@ hr {
 
 #addings {
   z-index: 10;
+  top: 10%;
+  width: 25vw;
+}
+
+#addings2 {
+  z-index: 10;
+  top: 50%;
+  width: 25vw;
 }
 
 #adding-drink {

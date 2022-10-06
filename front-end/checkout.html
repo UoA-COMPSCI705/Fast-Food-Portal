@@ -18,8 +18,9 @@
     <div id="sidebar">
         <h1 id="header">Components</h1>
         <div id="controls">
-            <button id="reset" type="button" class="btn-md outline" onClick="window.location.reload();">Reset</button>
-            <button id="confirm" type="button" class="btn-md fill" onClick="disableDrag();">Confirm</button>
+            <button id="reset" type="button" class="btn-md outline" onclick="window.location.reload();">Reset</button>
+            <button id="confirm" type="button" class="btn-md fill" onclick="disableDrag();">Confirm</button>
+            <button id="enable-modal" type="button" class="btn-md fill" onclick="enableModalListener()">EnableModal</button>
         </div>
     </div>
     <div id="workspace">
@@ -63,10 +64,10 @@
         </div>
         <h2 class="price">$4.90</h2>
         <div id="add-btn-3-div" class="resize-drag">
-            <button class="add-btn" onclick="opensesameModal()">&#43;</button>
+            <button class="add-btn edit-item">&#43;</button>
         </div>
         <div id="edit-btn-3-div" class="resize-drag">
-            <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+            <button class="add-btn add-size"><i class="fa fa-cog" aria-hidden="true"></i></button>
         </div>
     </div>
     <div id="orderitem2" class="order-item resize-drag">
@@ -80,10 +81,10 @@
         </div>
         <h2 class="price">$5.90</h2>
         <div id="add-btn-2-div" class="resize-drag">
-            <button class="add-btn" onclick="opensesameModal()">&#43;</button>
+            <button class="add-btn edit-item">&#43;</button>
         </div>
         <div id="edit-btn-2-div" class="resize-drag">
-            <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+            <button class="add-btn add-size"><i class="fa fa-cog" aria-hidden="true"></i></button>
         </div>
     </div>
     <div id="orderitem1" class="order-item resize-drag">
@@ -97,10 +98,10 @@
         </div>
         <h2 class="price">$3.00</h2>
         <div id="add-btn-1-div" class="resize-drag">
-            <button class="add-btn" onclick="opensesameModal()">&#43;</button>
+            <button class="add-btn edit-item">&#43;</button>
         </div>
         <div id="edit-btn-1-div" class="resize-drag">
-            <button class="add-btn" onclick="openModal()"><i class="fa fa-cog" aria-hidden="true"></i></button>
+            <button class="add-btn add-size"><i class="fa fa-cog" aria-hidden="true"></i></button>
         </div>
     </div>
     <div class="modal resize-drag" id="addings">
