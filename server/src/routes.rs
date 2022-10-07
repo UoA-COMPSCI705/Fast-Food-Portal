@@ -1,74 +1,66 @@
-use super::db::schema::{User, Click};
-use async_graphql::SimpleObject;
-use mongodb::bson::oid::ObjectId;
-use serde::{Deserialize, Serialize};
+use axum::{Json, response::IntoResponse};
+use crate::{DB_CLIENT, CONFIG};
+use crate::db::schema::Data;
+use futures::stream::StreamExt;
+use mongodb::bson::doc;
 
-#[derive(Debug, Clone, Serialize, Deserialize, SimpleObject)]
-pub(crate) struct LoginRequest {
-    email: String,
-    password: String,
-}
-#[derive(Debug, Clone, Serialize, Deserialize, SimpleObject)]
-pub(crate) struct RegisterRequest {
+
+struct FetchDataByUserRequest {
     username: String,
-    email: String,
-    password: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize, SimpleObject)]
-pub(crate) struct UserResponse {
-    pub(crate) user: User,
-    pub(crate) token: String,
+struct FetchDataByUserAndTaskRequest {
+    username: String,
+    task_id: usize,
 }
 
-pub(crate) trait Data:
-    Clone
-    + core::fmt::Debug
-    + Serialize
-    + serde::de::DeserializeOwned
-    + Send
-    + Sync
-    + 'static
-    + async_graphql::OutputType
-{
+struct FetchDataByTaskRequest {
+    task_id: usize,
 }
 
-impl<T> Data for T where
-    T: Send
-        + Sync
-        + Clone
-        + core::fmt::Debug
-        + Serialize
-        + serde::de::DeserializeOwned
-        + 'static
-        + async_graphql::OutputType
-{
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub(crate) struct Response<D: Data> {
-    #[serde(skip_serializing_if = "Option::is_none")]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+struct Response<T> {
     err: Option<String>,
-    #[serde(bound = "D: Data", skip_serializing_if = "Option::is_none")]
-    data: Option<D>,
+    data: Option<T>,
 }
 
-impl<D: Data> Response<D> {
-    pub fn new(data: D) -> Self {
-        Response {
+impl Default for Response<T> {
+    fn default() -> Self {
+        Self {
+            err: None,
+            data: None,
+        }
+    }
+}
+
+impl<T> Response<T> {
+    fn with_err(err: String) -> Self {
+        Self {
+            err: Some(err),
+            data: None,
+        }
+    }
+
+    fn with_data(data: T) -> Self {
+        Self {
             err: None,
             data: Some(data),
         }
     }
 }
 
-#[async_graphql::Object]
-impl<D: Data> Response<D> {
-    async fn err(&self) -> Option<&str> {
-        self.err.as_deref()
-    }
+pub(super) async fn store(Json(req): Json<Data>) -> impl IntoResponse {
+    todo!()
+}
 
-    async fn data(&self) -> Option<&D> {
-        self.data.as_ref()
-    }
+pub(super) async fn fetch_data_by_user(Json(req): Json<FetchDataByUserRequest>) -> impl IntoResponse {
+    todo!()    
+}
+
+pub(super) async fn fetch_data_by_user_and_task(Json(req): Json<FetchDataByUserAndTaskRequest>) -> impl IntoResponse {
+    todo!()
+}
+
+pub(super) async fn fetch_data_by_task(Json(req): Json<FetchDataByTaskRequest>) -> impl IntoResponse {
+    todo!()
 }
