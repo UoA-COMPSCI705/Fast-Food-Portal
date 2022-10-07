@@ -14,12 +14,16 @@ mod db;
 static CONFIG: once_cell::sync::OnceCell<Config> = once_cell::sync::OnceCell::new();
 static DB_CLIENT: once_cell::sync::OnceCell<Client> = once_cell::sync::OnceCell::new();
 
-
 /// Food Portal CLI -- Boots up Food Portal server.
-#[derive(clap::Parser, Clone)]
+#[derive(clap::Parser, Clone, Debug)]
 struct Config {
     /// Socket address to listen on
-    #[clap(short, long, env = "Food_Portal_ADDR", default_value = "127.0.0.1:3000")]
+    #[clap(
+        short,
+        long,
+        env = "Food_Portal_ADDR",
+        default_value = "127.0.0.1:3000"
+    )]
     addr: SocketAddr,
     /// MongoDB uri
     #[clap(
@@ -53,11 +57,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     CONFIG.set(config.clone()).unwrap();
 
     let app = Router::new()
+        .route("/", get(routes::fetch_all))
         .route("/store", post(routes::store))
         .route("/user", post(routes::fetch_data_by_user))
         .route("/user/task", post(routes::fetch_data_by_user_and_task))
         .route("/task", post(routes::fetch_data_by_task));
-
 
     Server::bind(&config.addr)
         .serve(app.into_make_service())

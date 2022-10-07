@@ -1,7 +1,6 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-
-#[derive(Debug, Copy, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Data {
     username: String,
@@ -14,9 +13,9 @@ impl From<Data> for mongodb::bson::Bson {
     fn from(data: Data) -> Self {
         mongodb::bson::Bson::Document(mongodb::bson::doc! {
             "username": data.username,
-            "task_id": data.task_id,
-            "time_taken": data.time_taken,
-            "num_of_misclicks": data.num_of_misclicks,
+            "task_id": data.task_id as i64,
+            "time_taken": data.time_taken as i64,
+            "num_of_misclicks": data.num_of_misclicks as i64,
         })
     }
 }
