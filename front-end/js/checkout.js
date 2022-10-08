@@ -1,3 +1,7 @@
+let totprice = 13.8
+let coke = 0
+let chips = 0
+let confirmed = false
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -97,9 +101,9 @@ interact('.resize-drag')
       }),
 
       // minimum size
-      interact.modifiers.restrictSize({
-        min: { width: 100, height: 50 }
-      })
+      // interact.modifiers.restrictSize({
+      //   min: { width: 100, height: 50 }
+      // })
     ],
 
     inertia: true
@@ -156,8 +160,135 @@ interact('.dropzone')
         }
     })
 
+let taskMode = false;
+let taskComplete = false;
+let beefCounter = 1;
+let cheeseCounter = 2;
+let friesCounter = 1;
+let colaCounter = 2;
+let timer = 0;
+
+function stage2Alert() {
+  alert("Tips: To achieve better user experience,we introduced EnableModal button at this stage.\nThis button will enable the functionalities of the two buttons inside of each order items. Please click this button after finishing design the interface, there will be two more modals for you to re-design. Enjoy the task.")
+}
+
+window.onload = stage2Alert();
+
+function enableModalListener() {
+  const editButtons = document.querySelectorAll(".edit-item");
+  editButtons.forEach(editButton => {
+    editButton.addEventListener("click", opensesameModal);
+  })
+
+  const addButtons = document.querySelectorAll(".add-size");
+  addButtons.forEach(addButton => {
+    addButton.addEventListener("click", openModal);
+  })
+}
+
+setInterval(myTimer, 10);
+
+function myTimer() {
+  if (taskMode && taskComplete == false) {
+    timer += 1;
+    document.getElementById("timer").innerHTML = "Timer: " + timer / 100 + "s";
+    if (
+      taskComplete == true
+    ) {
+      alert(
+        "The task is completed... You did it in " +
+          timer / 100 +
+          "s. Great work!"
+      );
+    }
+  }
+}
+
 function disableDrag() {
     interact('.resize-drag').draggable(false).resizable(false);
+    document.getElementById('TotalCheckoutPrice').innerHTML = "$" + totprice;
+    document.getElementById('inputPrompt').innerHTML = "";
+    confirmed = true;
+    // document.getElementById('chipcount').innerHTML= chips;
+    // document.getElementById('colacount').innerHTML= cola;
+
+    alert(
+      "You are now entering the testing phase of your design. You will be timed while completing a simple task."
+    );
+    document.getElementById("controls").innerHTML =
+      'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger w/ Cheese s/ Coke</p><p id="cheese-burger-task">2x Cheese Burger w/ Chips</p><p id="french-fries-task">Hawaii Chicken w/ Pickles w/ Cheese</p>';
+    document.getElementById("controls").style.lineHeight = "1.6";
+    document.getElementById("header").innerHTML = "Task to Complete";
+    document.getElementById("controls").style.lineHeight = "1.6";
+    taskMode = true;
+    // document.getElementById("menu-list").innerHTML = "";
+    document.getElementById("sidebar").innerHTML +=
+      '<div id="timer">Timer: 0.00s</div>';
+    document.getElementById("check-out-btn").addEventListener("click", finish);
+}
+
+var modal = document.getElementById("addings");
+
+function openModal() {
+  document.getElementById("addings").style.display = "block";
+}
+
+function opensesameModal() {
+  document.getElementById("addings2").style.display = "block";
+}
+   
+
+function closeModal() {
+    document.getElementById("addings").style.display = "none";
+}
+function closeModal2() {
+  document.getElementById("addings2").style.display = "none";
+}
+function removeitem1(){
+    document.getElementById("orderitem1").style.display = "none";
+}
+function removeitem2(){
+  document.getElementById("orderitem2").style.display = "none";
+}
+function removeitem3(){
+  document.getElementById("orderitem3").style.display = "none";
+}
+
+function removeCoke(){
+  document.getElementById("coke").style.display = "none";
+}
+
+function removeFries(){
+  document.getElementById("fries").style.display = "none";
+}
+
+function addCoke(){
+  // document.getElementById("coke").style.display = null;
+  totprice += 1.5;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
+}
+function addFries(){
+  // document.getElementById("fries").style.display = null;
+  totprice += 2.5;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
+}
+function addCheese(){
+  // document.getElementById("coke").style.display = null;
+  totprice += 0.7;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
+}
+function addPickles(){
+  // document.getElementById("fries").style.display = null;
+  totprice += 0.5;
+  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
+}
+
+function finish(){
+  if (confirmed){
+    taskComplete = true;
+    let timesec = timer/100;
+    document.getElementById('controls').innerHTML = "Well Done! You completed the task in " + timesec + " seconds. Onto the next one.";
+  } 
 }
 
 function fetchAll() {
