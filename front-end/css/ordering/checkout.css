@@ -20,7 +20,7 @@ body {
     float: left;
     margin-left: 0%;
     height: 100vh;
-    width: 25vw;
+    width: 21vw;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     padding-left: 2vw;
     float: left;
     height: 100vh;
-    width: 75vw;
+    width: 79vw;
     text-align: center;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
@@ -41,8 +41,8 @@ body {
 .menu {
   /* border: 1px solid #fff; */
   float: left;
-  width: 220px;
-  height: 170px;
+  width: 9%;
+  height: 15%;
   padding: 13px;
   text-transform: capitalize;
   font-size: 13px;
@@ -50,8 +50,6 @@ body {
   position: relative;
   border-radius: 14px;
   text-align: center;
-  margin-right: 25px;
-  margin-bottom: 50px;
   box-shadow: 2px 12px 15px rgba(0, 0, 0, 0.1);
   background: linear-gradient(
     180deg,
@@ -63,9 +61,9 @@ body {
 
 .menu img {
   position: absolute;
-  bottom: 60px;
-  left: 45px;
-  width: 130px;
+  top: 20%;
+  left: 25%;
+  width: 50%;
   margin-bottom: 8px;
   transform: rotate(-5deg);
   filter: drop-shadow(0 10px 15px rgba(38, 43, 47, 0.7));
@@ -145,24 +143,25 @@ body {
 
 .order {
   float: right;
-  width: 25%;
-  padding-right: 3.5rem;
+  width: 19%;
+  height: 20%;
 }
 
 .order-list {
-  padding: 18px;
+  padding: 12px;
   background-color: #2c2f34;
   border-radius: 14px;
+  height: 100%;
 }
 
 .order-list h3 {
   color: #f6f6f6;
   font-weight: 600;
-  margin-bottom: 19px;
+  margin-bottom: 14px;
 }
 
 .order-inner {
-  height: 291px;
+  height: calc(100% - 160px);
   overflow-y: scroll;
   z-index: 999;
 }
@@ -246,12 +245,12 @@ hr {
 }
 
 .btn-md {
-  padding: 8px 20px;
+  padding: 4px 10px;
   outline: none;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: 1px;
   text-transform: capitalize;
   font-weight: 600;
@@ -328,14 +327,13 @@ hr {
 }
 
 .checkout-detail button {
-  margin: 0 21px;
+  margin: 0 6px;
 }
 
 .resize-drag {
     position: fixed;
-    margin-top: 20px;
-    margin-left: 20px;
     color: white;
+    margin: 1%;
     border-radius: 0.75em;
     touch-action: none;
     user-select: none;
@@ -348,14 +346,49 @@ hr {
     padding: 10px;
 }
 
-#controls{
-    bottom: 10%;
+#timer{
+    margin: 1%;
+    bottom: 0%;
+    position: absolute;
+    font-size: 2em;
 }
 
 #beef-burger{
     top: 10%;
 }
 
+#chicken-burger{
+    top: 10%;
+    left: 10%;
+}
+
+#bacon-burger{
+    top: 27%;
+}
+
+#cheese-burger{
+    top: 27%;
+    left: 10%;
+}
+
+#chicken-deluxe{
+    top: 44%;
+}
+
+#fries{
+    top: 44%;
+    left: 10%;
+}
+
+#hot-fries{
+    top: 61%;
+}
+
+#coca-cola{
+    top: 61%;
+    left: 10%;
+}
+
 #order-menu{
-    top: 30%;
+    top: 78%;
 }
