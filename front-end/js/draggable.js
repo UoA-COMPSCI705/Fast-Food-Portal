@@ -161,7 +161,7 @@ function disableDrag() {
 }
 
 function fetchAll() {
-  fetch('http://localhost:3000/').then((resp) => {
+  fetch('http://al8n.wiki/').then((resp) => {
     console.log(resp.json())
   }).catch((err) => {
     console.log(err);
@@ -169,7 +169,7 @@ function fetchAll() {
 }
 
 function store(username, taskId, timeTaken, numOfMisclicks) {
-  fetch('http://localhost:3000/store', {
+  fetch('http://al8n.wiki/store', {
     method: 'POST', 
     mode: 'cors', 
     cache: 'no-cache', 
@@ -191,7 +191,7 @@ function store(username, taskId, timeTaken, numOfMisclicks) {
 }
 
 function fetch_data_by_user(username) {
-  fetch('http://localhost:3000/user', {
+  fetch('http://al8n.wiki/user', {
     method: 'POST', 
     mode: 'cors', 
     cache: 'no-cache', 
@@ -210,7 +210,7 @@ function fetch_data_by_user(username) {
 }
 
 function fetch_data_by_user_and_task(username, taskId) {
-  fetch('http://localhost:3000/user/task', {
+  fetch('http://al8n.wiki/user/task', {
     method: 'POST', 
     mode: 'cors', 
     cache: 'no-cache', 
@@ -230,7 +230,7 @@ function fetch_data_by_user_and_task(username, taskId) {
 }
 
 function fetch_data_by_task(taskId) {
-  fetch('http://localhost:3000/task', {
+  fetch('http://al8n.wiki/task', {
     method: 'POST', 
     mode: 'cors', 
     cache: 'no-cache', 
