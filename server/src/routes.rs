@@ -46,6 +46,7 @@ pub struct FetchDataByTaskRequest {
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct Response<T> {
     err: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     data: Option<T>,
 }
 
