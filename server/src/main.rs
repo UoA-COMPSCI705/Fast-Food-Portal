@@ -1,14 +1,18 @@
 mod routes;
 
 use axum::{
+    http::{
+        header::{CONTENT_TYPE, USER_AGENT},
+        Method,
+    },
     routing::{get, post},
-    *, http::{Method, header::{CONTENT_TYPE, USER_AGENT}},
+    *,
 };
 
 use clap::Parser;
 use mongodb::Client;
 use std::net::SocketAddr;
-use tower_http::cors::{CorsLayer, Any};
+use tower_http::cors::{Any, CorsLayer};
 
 mod db;
 

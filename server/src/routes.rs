@@ -5,7 +5,6 @@ use futures::stream::StreamExt;
 use mongodb::bson::doc;
 use serde::{Deserialize, Serialize};
 
-
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct StoreRequest {
@@ -79,7 +78,7 @@ pub(super) async fn store(Json(req): Json<StoreRequest>) -> impl IntoResponse {
     let client = DB_CLIENT.get().unwrap();
     let cfg = CONFIG.get().unwrap();
     let data = client.database(&cfg.db_name).collection::<Data>("data");
-    
+
     match data.insert_one(Data::from(req.clone()), None).await {
         Ok(_) => {
             tracing::info!(target: "store", "Data {{user: {}, task: {}}}", req.username, req.task_id);
