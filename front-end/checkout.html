@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fast food</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
+    <script src="js/draggable.js"></script>
+    
+    <link rel="stylesheet" href="css/checkout.css" type="text/css" />
+</head>
+
+<body>
+    <div id="sidebar">
+        <h1 id="header">Components</h1>
+        <div id="controls">
+            <button id="reset" type="button" class="btn-md outline" onClick="window.location.reload();">Reset</button>
+            <button id="confirm" type="button" class="btn-md fill" onClick="disableDrag();">Confirm</button>
+        </div>
+    </div>
+    <div id="workspace">
+        <h1 id="header">Checkout Terminal</h1>
+    </div>
+    <div id="beef-burger" class="resize-drag menu">
+        <img src="img/burger/beef-2.png" alt="beef">
+        <h2 class="price">$4.7</h2>
+        <div class="desc-item">
+        <h3>Beef burger 2</h3>
+        <p>special burger with beef hot sausage</p>
+        </div>
+            <button type="button">&#43;</button>
+        </div>
+    <div id="order-menu" class="resize-drag order">
+                <div class="order-list">
+                    <h3>Order Summary</h3>
+                    <hr>
+                    <div class="order-inner">
+                        <div class="order-null">
+                            <i class="fas fa-clipboard-list"></i>
+                            <p>belum ada pesanan</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="checkout">
+                        <div class="checkout-detail" id="qty">
+                            <h5>0 item(s)</h5>
+                            <h5>qty: <span>0</span></h5>
+                        </div>
+                        <div class="checkout-detail" id="subtotal">
+                            <h5>Subtotal</h5>
+                            <h4>$0</h4>
+                        </div>
+                        <div class="checkout-detail" id="tax" data-tax="5">
+                            <h5>Tax</h5>
+                            <h4>5%</h4>
+                        </div>
+                        <div class="checkout-detail" id="total">
+                            <h3>Total</h3>
+                            <h3>$0</h3>
+                        </div>
+                    </div>
+                    <div class="checkout-detail">
+                        <button type="button" class="btn-md outline">hold order</button>
+                        <button type="button" class="btn-md fill">checkout</button>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>

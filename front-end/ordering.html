@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fast food</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
+    <script src="js/draggable.js"></script>
+
+    <link rel="stylesheet" href="css/ordering.css" type="text/css" />
+</head>
+
+<body>
+    <!-- Component Space -->
+    <div id="sidebar">
+        <h1 id="header">Components</h1>
+        <div id="controls">
+            <button id="reset" type="button" class="btn-md outline" onClick="window.location.reload();">Reset</button>
+            <button id="confirm" type="button" class="btn-md fill" onClick="disableDrag();">Confirm</button>
+        </div>
+    </div>
+
+    <!-- Workspace -->
+    <div id="workspace">
+        <h1 id="header">Ordering Terminal</h1>
+    </div>
+
+    <!-- Burger buttons -->
+    <div id="beef-burger" class="resize-drag menu">
+        <img src="img/burger/beef.png" alt="beef">
+        <h2 class="price">$4.7</h2>
+        <div class="desc-item">
+            <h3>Beef burger</h3>
+            <p>special burger with beef hot sausage</p>
+        </div>
+    </div>
+    <div id="beef-burger" class="resize-drag menu">
+        <img src="img/burger/beef-2.png" alt="beef">
+        <h2 class="price">$4.7</h2>
+        <div class="desc-item">
+            <h3>Beef burger 2</h3>
+            <p>special burger with beef hot sausage</p>
+        </div>
+    </div>
+    <div id="beef-burger" class="resize-drag menu">
+        <img src="img/burger/beef-3.png" alt="beef">
+        <h2 class="price">$4.7</h2>
+        <div class="desc-item">
+            <h3>Beef burger 3</h3>
+            <p>special burger with beef hot sausage</p>
+        </div>
+    </div>
+    <div id="beef-burger" class="resize-drag menu">
+        <img src="img/burger/beef-4.png" alt="beef">
+        <h2 class="price">$4.7</h2>
+        <div class="desc-item">
+            <h3>Beef burger 4</h3>
+            <p>special burger with beef hot sausage</p>
+        </div>
+
+    </div>
+
+    <!-- Add buttons -->
+    <div id="add-button" class="resize-drag">
+        <button type="button">&#43;</button>
+    </div>
+    <div id="add-button" class="resize-drag">
+        <button type="button">&#43;</button>
+    </div>
+    <div id="add-button" class="resize-drag">
+        <button type="button">&#43;</button>
+    </div>
+    <div id="add-button" class="resize-drag">
+        <button type="button">&#43;</button>
+    </div>
+
+    <!-- Info buttons -->
+    <div id="help-button" class="resize-drag">
+        <button type="button">&#9432;</button>
+    </div>
+    <div id="help-button" class="resize-drag">
+        <button type="button">&#9432;</button>
+    </div>
+    <div id="help-button" class="resize-drag">
+        <button type="button">&#9432;</button>
+    </div>
+    <div id="help-button" class="resize-drag">
+        <button type="button">&#9432;</button>
+    </div>
+
+    <!-- Help buttons -->
+    <div id="help-button" class="resize-drag">
+        <button type="button">&#63;</button>
+    </div>
+
+    <!-- Checkout button -->
+    <div id="pay-for-order-btn" class="resize-drag">
+        <button id="checkout-button" type="button">Checkout</button>
+    </div>
+
+</body>
+
+</html>
