@@ -103,9 +103,9 @@ interact(".resize-drag")
       }),
 
       // minimum size
-      interact.modifiers.restrictSize({
-        min: { width: 100, height: 50 },
-      }),
+      // interact.modifiers.restrictSize({
+      //   min: { width: 100, height: 50 }
+      // })
     ],
 
     inertia: false,
@@ -159,6 +159,8 @@ interact(".dropzone").dropzone({
     event.target.classList.remove("drop-target");
   },
 });
+
+document.getElementById("id01").style.display = "block";
 
 let taskMode = false;
 let taskComplete = false;

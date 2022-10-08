@@ -8,14 +8,67 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
-    <script src="js/ordering.js"></script>
-
     <link rel="stylesheet" href="css/ordering/ordering.css" type="text/css" />
   </head>
 
   <body>
+    <div class="w3-container">
+      <div id="id01" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 600px"
+        >
+          <div class="w3-center">
+            <br />
+            <img src="img/logo2.JPG" alt="Avatar" style="width: 95%" />
+          </div>
+
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id02').style.display = 'block'; document.getElementById('id01').style.display='none'; localStorage.setItem('username', document.getElementsByTagName('input')[0].value); return false;"
+          >
+            <div class="w3-section">
+              <label><b>Enter your name...</b></label>
+              <input
+                class="w3-input w3-border w3-margin-bottom"
+                type="text"
+                placeholder="Enter Name"
+                name="usrname"
+                required
+              />
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id02" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 600px"
+        >
+          <div class="w3-center">
+            <br />
+            <img src="img/logo2.JPG" alt="Avatar" style="width: 100%" />
+          </div>
+
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id02').style.display='none'; return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div id="sidebar">
       <h1 id="header">Components</h1>
       <div id="controls">
@@ -39,6 +92,7 @@
     </div>
     <div id="workspace">
       <h1 id="header">Ordering Terminal</h1>
+      <div id="outlined-box"></div>
     </div>
     <div id="beef-burger" class="resize-drag menu">
       <img src="img/burger/beef.png" alt="beef" />
@@ -133,10 +187,8 @@
             <h3>$0</h3>
           </div>
         </div>
-        <div class="checkout-detail">
-          <button type="button" class="btn-md fill">checkout</button>
-        </div>
       </div>
     </div>
   </body>
+  <script src="js/ordering.js"></script>
 </html>

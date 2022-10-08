@@ -17,25 +17,25 @@ body {
 }
 
 #sidebar {
-    float: left;
-    margin-left: 0%;
-    height: 100vh;
-    width: 21vw;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  float: left;
+  margin-left: 0%;
+  height: 100vh;
+  width: 21vw;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #workspace {
-    padding-left: 2vw;
-    float: left;
-    height: 100vh;
-    width: 79vw;
-    text-align: center;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    box-shadow: -8px 0px 15px rgba(0, 0, 0, 0.1);
-    background-color: #1c1f24;
+  padding-left: 2vw;
+  float: left;
+  height: 100vh;
+  width: 79vw;
+  text-align: center;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  box-shadow: -8px 0px 15px rgba(0, 0, 0, 0.1);
+  background-color: #1c1f24;
 }
 
 .menu {
@@ -331,64 +331,64 @@ hr {
 }
 
 .resize-drag {
-    position: fixed;
-    color: white;
-    margin: 1%;
-    border-radius: 0.75em;
-    touch-action: none;
-    user-select: none;
-    transform: translate(0px, 0px);
-    z-index: 1;
-    box-sizing: border-box;
+  position: fixed;
+  color: white;
+  margin: 1%;
+  border-radius: 0.75em;
+  touch-action: none;
+  user-select: none;
+  transform: translate(0px, 0px);
+  z-index: 1;
+  box-sizing: border-box;
 }
 
-#header{
-    padding: 10px;
+#header {
+  padding: 10px;
 }
 
-#timer{
-    margin: 1%;
-    bottom: 0%;
-    position: absolute;
-    font-size: 2em;
+#timer {
+  margin: 1%;
+  bottom: 0%;
+  position: absolute;
+  font-size: 2em;
 }
 
-#beef-burger{
-    top: 10%;
+#beef-burger {
+  top: 10%;
 }
 
-#chicken-burger{
-    top: 10%;
-    left: 10%;
+#chicken-burger {
+  top: 10%;
+  left: 10%;
 }
 
-#bacon-burger{
-    top: 27%;
+#bacon-burger {
+  top: 27%;
 }
 
-#cheese-burger{
-    top: 27%;
-    left: 10%;
+#cheese-burger {
+  top: 27%;
+  left: 10%;
 }
 
-#chicken-deluxe{
-    top: 44%;
+#chicken-deluxe {
+  top: 44%;
 }
 
-#fries{
-    top: 44%;
-    left: 10%;
+#fries {
+  top: 44%;
+  left: 10%;
 }
 
-#hot-fries{
-    top: 61%;
+#hot-fries {
+  top: 61%;
 }
 
-#coca-cola{
-    top: 61%;
-    left: 10%;
+#coca-cola {
+  top: 61%;
+  left: 10%;
 }
 
-#order-menu{
-    top: 78%;
+#order-menu {
+  top: 78%;
 }
