@@ -108,7 +108,7 @@ interact(".resize-drag")
       }),
     ],
 
-    inertia: true,
+    inertia: false,
   })
   .draggable({
     listeners: { move: window.dragMoveListener },
@@ -181,7 +181,6 @@ function myTimer() {
       colaCounter <= 0
     ) {
       taskComplete = true;
-      fetchAll();
       alert(
         "The task is completed... You did it in " +
           timer / 100 +
