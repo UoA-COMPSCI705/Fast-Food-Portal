@@ -11,12 +11,14 @@ pub struct FetchDataByUserRequest {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct FetchDataByUserAndTaskRequest {
     username: String,
     task_id: usize,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct FetchDataByTaskRequest {
     task_id: usize,
 }
@@ -56,12 +58,18 @@ pub(super) async fn store(Json(req): Json<Data>) -> impl IntoResponse {
     let client = DB_CLIENT.get().unwrap();
     let cfg = CONFIG.get().unwrap();
     let data = client.database(&cfg.db_name).collection::<Data>("data");
-    match data.insert_one(req, None).await {
-        Ok(_) => (StatusCode::CREATED, Json(Response::default())),
-        Err(e) => (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(Response::<()>::with_err(e.to_string())),
-        ),
+    match data.insert_one(req.clone(), None).await {
+        Ok(_) => {
+            tracing::info!(target: "store", "Data {{user: {}, task: {}}}", req.username, req.task_id);
+            (StatusCode::OK, Json(Response::default()))
+        }
+        Err(e) => {
+            tracing::error!(target: "store", err = ?e);
+            (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(Response::<()>::with_err(e.to_string())),
+            )
+        }
     }
 }
 
@@ -76,10 +84,11 @@ pub(super) async fn fetch_all() -> impl IntoResponse {
                 match result {
                     Ok(doc) => data.push(doc),
                     Err(e) => {
+                        tracing::error!(target: "fetch_all_data", err = ?e);
                         return (
                             StatusCode::INTERNAL_SERVER_ERROR,
                             Json(Response::with_err(e.to_string())),
-                        )
+                        );
                     }
                 }
             }
@@ -108,10 +117,11 @@ pub(super) async fn fetch_data_by_user(
                 match data {
                     Ok(data) => res.push(data),
                     Err(e) => {
+                        tracing::error!(target: "fetch_data_by_user", err = ?e);
                         return (
                             StatusCode::INTERNAL_SERVER_ERROR,
                             Json(Response::with_err(e.to_string())),
-                        )
+                        );
                     }
                 }
             }
@@ -131,7 +141,7 @@ pub(super) async fn fetch_data_by_user_and_task(
     let cfg = CONFIG.get().unwrap();
     let filter = doc! {
         "username": req.username,
-        "task_id": req.task_id as i64,
+        "taskId": req.task_id as i64,
     };
 
     let data = client.database(&cfg.db_name).collection::<Data>("data");
@@ -142,10 +152,11 @@ pub(super) async fn fetch_data_by_user_and_task(
                 match data {
                     Ok(data) => res.push(data),
                     Err(e) => {
+                        tracing::error!(target: "fetch_data_by_user_and_task", err = ?e);
                         return (
                             StatusCode::INTERNAL_SERVER_ERROR,
                             Json(Response::with_err(e.to_string())),
-                        )
+                        );
                     }
                 }
             }
@@ -164,7 +175,7 @@ pub(super) async fn fetch_data_by_task(
     let client = DB_CLIENT.get().unwrap();
     let cfg = CONFIG.get().unwrap();
     let filter = doc! {
-        "task_id": req.task_id as i64,
+        "taskId": req.task_id as i64,
     };
 
     let data = client.database(&cfg.db_name).collection::<Data>("data");
@@ -175,10 +186,11 @@ pub(super) async fn fetch_data_by_task(
                 match data {
                     Ok(data) => res.push(data),
                     Err(e) => {
+                        tracing::error!(target: "fetch_data_by_task", err = ?e);
                         return (
                             StatusCode::INTERNAL_SERVER_ERROR,
                             Json(Response::with_err(e.to_string())),
-                        )
+                        );
                     }
                 }
             }

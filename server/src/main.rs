@@ -40,6 +40,16 @@ struct Config {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+    let filter =
+        std::env::var("RUST_LOG").unwrap_or_else(|_| "info,polarsync_core=debug".to_owned());
+    tracing_subscriber::fmt::fmt()
+        .with_env_filter(filter)
+        .with_file(false)
+        .with_line_number(true)
+        .with_target(true)
+        .with_ansi(true)
+        .init();
+
     let config = Config::parse();
 
     use mongodb::{options::ClientOptions, Client};
@@ -63,6 +73,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         .route("/user/task", post(routes::fetch_data_by_user_and_task))
         .route("/task", post(routes::fetch_data_by_task));
 
+    tracing::info!("Starting server on {}...", config.addr);
     Server::bind(&config.addr)
         .serve(app.into_make_service())
         .await?;
