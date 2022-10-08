@@ -161,5 +161,89 @@ function disableDrag() {
 }
 
 function fetchAll() {
-  fetch('https:///')
+  fetch('http://localhost:3000/').then((resp) => {
+    console.log(resp.json())
+  }).catch((err) => {
+    console.log(err);
+  });
+}
+
+function store(username, taskId, timeTaken, numOfMisclicks) {
+  fetch('http://localhost:3000/store', {
+    method: 'POST', 
+    mode: 'cors', 
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: username,
+      taskId: taskId,
+      timeTaken: timeTaken,
+      numOfMisclicks: numOfMisclicks
+    })
+  }).then((resp) => {
+    console.log(resp.json())
+  }).catch((err) => {
+    console.log(err);
+  });
+}
+
+function fetch_data_by_user(username) {
+  fetch('http://localhost:3000/user', {
+    method: 'POST', 
+    mode: 'cors', 
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: username
+    })
+  }).then((resp) => {
+    console.log(resp.json())
+  }).catch((err) => {
+    console.log(err);
+  });
+}
+
+function fetch_data_by_user_and_task(username, taskId) {
+  fetch('http://localhost:3000/user/task', {
+    method: 'POST', 
+    mode: 'cors', 
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: username,
+      taskId: taskId
+    })
+  }).then((resp) => {
+    console.log(resp.json())
+  }).catch((err) => {
+    console.log(err);
+  });
+}
+
+function fetch_data_by_task(taskId) {
+  fetch('http://localhost:3000/task', {
+    method: 'POST', 
+    mode: 'cors', 
+    cache: 'no-cache', 
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      taskId: taskId,
+    })
+  }).then((resp) => {
+    console.log(resp.json())
+  }).catch((err) => {
+    console.log(err);
+  });
 }
