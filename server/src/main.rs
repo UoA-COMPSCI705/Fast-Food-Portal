@@ -2,12 +2,13 @@ mod routes;
 
 use axum::{
     routing::{get, post},
-    *,
+    *, http::{Method, header::{CONTENT_TYPE, USER_AGENT}},
 };
 
 use clap::Parser;
 use mongodb::Client;
 use std::net::SocketAddr;
+use tower_http::cors::{CorsLayer, Any};
 
 mod db;
 
@@ -71,7 +72,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         .route("/store", post(routes::store))
         .route("/user", post(routes::fetch_data_by_user))
         .route("/user/task", post(routes::fetch_data_by_user_and_task))
-        .route("/task", post(routes::fetch_data_by_task));
+        .route("/task", post(routes::fetch_data_by_task))
+        .layer(
+            CorsLayer::new()
+                .allow_origin(Any)
+                .allow_headers([CONTENT_TYPE, USER_AGENT])
+                .allow_methods([Method::GET, Method::POST]),
+        );
 
     tracing::info!("Starting server on {}...", config.addr);
     Server::bind(&config.addr)
