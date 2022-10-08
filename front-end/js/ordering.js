@@ -181,6 +181,7 @@ function myTimer() {
       colaCounter <= 0
     ) {
       taskComplete = true;
+      fetchAll();
       alert(
         "The task is completed... You did it in " +
           timer / 100 +
@@ -242,4 +243,102 @@ function disableDrag() {
   document.getElementById("menu-list").innerHTML = "";
   document.getElementById("sidebar").innerHTML +=
     '<div id="timer">Timer: 0.00s</div>';
+}
+
+function fetchAll() {
+  fetch("http://al8n.wiki/")
+    .then((resp) => {
+      console.log(resp.json());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function store(username, taskId, timeTaken, numOfMisclicks) {
+  fetch("http://al8n.wiki/store", {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username,
+      taskId: taskId,
+      timeTaken: timeTaken,
+      numOfMisclicks: numOfMisclicks,
+    }),
+  })
+    .then((resp) => {
+      console.log(resp.json());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function fetch_data_by_user(username) {
+  fetch("http://al8n.wiki/user", {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username,
+    }),
+  })
+    .then((resp) => {
+      console.log(resp.json());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function fetch_data_by_user_and_task(username, taskId) {
+  fetch("http://al8n.wiki/user/task", {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username,
+      taskId: taskId,
+    }),
+  })
+    .then((resp) => {
+      console.log(resp.json());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function fetch_data_by_task(taskId) {
+  fetch("http://al8n.wiki/task", {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      taskId: taskId,
+    }),
+  })
+    .then((resp) => {
+      console.log(resp.json());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
