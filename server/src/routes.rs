@@ -5,6 +5,27 @@ use futures::stream::StreamExt;
 use mongodb::bson::doc;
 use serde::{Deserialize, Serialize};
 
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct StoreRequest {
+    username: String,
+    task_id: usize,
+    time_taken: f64,
+    num_of_misclicks: usize,
+}
+
+impl From<StoreRequest> for Data {
+    fn from(req: StoreRequest) -> Self {
+        Self {
+            username: req.username,
+            task_id: req.task_id,
+            time_taken: req.time_taken,
+            num_of_misclicks: req.num_of_misclicks,
+        }
+    }
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FetchDataByUserRequest {
     username: String,
@@ -54,11 +75,12 @@ impl<T> Response<T> {
     }
 }
 
-pub(super) async fn store(Json(req): Json<Data>) -> impl IntoResponse {
+pub(super) async fn store(Json(req): Json<StoreRequest>) -> impl IntoResponse {
     let client = DB_CLIENT.get().unwrap();
     let cfg = CONFIG.get().unwrap();
     let data = client.database(&cfg.db_name).collection::<Data>("data");
-    match data.insert_one(req.clone(), None).await {
+    
+    match data.insert_one(Data::from(req.clone()), None).await {
         Ok(_) => {
             tracing::info!(target: "store", "Data {{user: {}, task: {}}}", req.username, req.task_id);
             (StatusCode::OK, Json(Response::default()))
