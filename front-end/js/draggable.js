@@ -159,3 +159,7 @@ interact('.dropzone')
 function disableDrag() {
     interact('.resize-drag').draggable(false).resizable(false);
 }
+
+function fetchAll() {
+  fetch('https:///')
+}
