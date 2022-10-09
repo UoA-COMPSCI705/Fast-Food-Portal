@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fast food</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
+    <script src="js/ordering.js"></script>
+
+    <link rel="stylesheet" href="css/ordering/ordering.css" type="text/css" />
+  </head>
+
+  <body>
+    <div id="sidebar">
+      <h1 id="header">Components</h1>
+      <div id="controls">
+        <button
+          id="reset"
+          type="button"
+          class="btn-md outline"
+          onClick="window.location.reload();"
+        >
+          Reset
+        </button>
+        <button
+          id="confirm"
+          type="button"
+          class="btn-md fill"
+          onClick="disableDrag();"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+    <div id="workspace">
+      <h1 id="header">Ordering Terminal</h1>
+    </div>
+    <div id="beef-burger" class="resize-drag menu">
+      <img src="img/burger/beef.png" alt="beef" />
+      <h2 class="price">$4.7</h2>
+      <div class="desc-item">
+        <h3>Beef burger</h3>
+        <p>Typical burger material</p>
+      </div>
+      <button type="button" onClick="addItemMenu(0)">&#43;</button>
+    </div>
+    <div id="chicken-burger" class="resize-drag menu">
+      <img src="img/burger/double-chicken.png" alt="chicken" />
+      <h2 class="price">$5.2</h2>
+      <div class="desc-item">
+        <h3>Chicken deluxe</h3>
+        <p>What happened to the chicken that crossed the road?</p>
+      </div>
+      <button type="button">&#43;</button>
+    </div>
+    <div id="bacon-burger" class="resize-drag menu">
+      <img src="img/drink/slushie.png" alt="beef" />
+      <h2 class="price">$2.5</h2>
+      <div class="desc-item">
+        <h3>Rainbow Slushie</h3>
+        <p>A Colourful Sensation!</p>
+      </div>
+      <button type="button">&#43;</button>
+    </div>
+    <div id="cheese-burger" class="resize-drag menu">
+      <img src="img/burger/cheeseburger.png" alt="chesee" />
+      <h2 class="price">$4.8</h2>
+      <div class="desc-item">
+        <h3>cheese burger</h3>
+        <p>Mmm Delicious</p>
+      </div>
+      <button type="button" onClick="addItemMenu(1)">&#43;</button>
+    </div>
+    <div id="chicken-deluxe" class="resize-drag menu">
+      <img src="img/chicken/deluxe-2.png" alt="thighs" />
+      <h2 class="price">$6.3</h2>
+      <div class="desc-item">
+        <h3>Chicken deluxe 2</h3>
+        <p>For the chicken lovers!</p>
+      </div>
+      <button type="button">&#43;</button>
+    </div>
+    <div id="fries" class="resize-drag menu">
+      <img src="img/fries/fries-4.png" alt="original" />
+      <h2 class="price">$12.5</h2>
+      <div class="desc-item">
+        <h3>French fries original</h3>
+        <p>French Fries Flavour</p>
+      </div>
+      <button type="button" onClick="addItemMenu(2)">&#43;</button>
+    </div>
+    <div id="hot-fries" class="resize-drag menu">
+      <img src="img/fries/hot-fries.png" alt="hot" />
+      <h2 class="price">$12.5</h2>
+      <div class="desc-item">
+        <h3>Hot Spicy fries</h3>
+        <p>Crispy Fries</p>
+      </div>
+      <button type="button">&#43;</button>
+    </div>
+    <div id="coca-cola" class="resize-drag menu">
+      <img src="img/drink/coca-cola.png" alt="coca cola" />
+      <h2 class="price">$2.5</h2>
+      <div class="desc-item">
+        <h3>Coca cola drink</h3>
+        <p>This is a coca-cola</p>
+      </div>
+      <button type="button" onClick="addItemMenu(3)">&#43;</button>
+    </div>
+    <div id="order-menu" class="resize-drag order">
+      <div class="order-list">
+        <h3>Order Summary</h3>
+        <hr />
+        <div id="menu-list" class="order-inner">
+          <div class="order-null">
+            <i class="fas fa-clipboard-list"></i>
+            <p>Your Orders</p>
+          </div>
+        </div>
+        <hr />
+        <div class="checkout">
+          <div class="checkout-detail" id="qty">
+            <h5>0 item(s)</h5>
+            <h5>qty: <span>0</span></h5>
+          </div>
+          <div class="checkout-detail" id="total">
+            <h3>Total</h3>
+            <h3>$0</h3>
+          </div>
+        </div>
+        <div class="checkout-detail">
+          <button type="button" class="btn-md fill">checkout</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

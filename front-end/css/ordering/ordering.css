@@ -97,8 +97,8 @@ body {
 }
 
 .menu button {
-    width: 30px;
-    height: 30px;
+    width: 10%;
+    height: 10%;
     position: absolute;
     outline: none;
     border: none;
