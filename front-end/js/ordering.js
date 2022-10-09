@@ -169,6 +169,7 @@ let cheeseCounter = 2;
 let friesCounter = 1;
 let colaCounter = 2;
 let timer = 0;
+let misclicks = -6;
 
 setInterval(myTimer, 10);
 
@@ -183,14 +184,19 @@ function myTimer() {
       colaCounter <= 0
     ) {
       taskComplete = true;
-      alert(
-        "The task is completed... You did it in " +
-          timer / 100 +
-          "s. Great work!"
-      );
+      document.getElementById("id04").style.display = "block";
+      document.getElementById("taskcomplete").innerHTML =
+        "Task 1 Complete - Your Time: " + timer / 100 + "s";
+      store(localStorage.getItem("username"), 1, timer / 100, misclicks);
     }
   }
 }
+
+window.addEventListener("click", (event) => {
+  if (taskMode) {
+    misclicks = misclicks + 1;
+  }
+});
 
 function addItemMenu(id) {
   if (taskMode) {
@@ -233,7 +239,7 @@ function addItemMenu(id) {
 function disableDrag() {
   interact(".resize-drag").draggable(false).resizable(false);
   document.getElementById("controls").innerHTML =
-    'Add the following to the order:<ul><li id="beef-burger-task">1x Beef Burger</li><li id="cheese-burger-task">2x Cheese Burgers</li><li id="french-fries-task">1x French Fries Original</li><li id="coca-cola-task">2x Coca Cola Drink</li>';
+    'Add the following to the order:<ul><li id="beef-burger-task">1x Beef Burger</li><li id="cheese-burger-task">2x Cheese Burgers</li><li id="french-fries-task">1x Deluxe Cheese Burger</li><li id="coca-cola-task">2x Pineapple Burger</li>';
   document.getElementById("controls").style.lineHeight = "1.6";
   document.getElementById("header").innerHTML = "Task to Complete";
   document.getElementById("controls").style.lineHeight = "1.6";

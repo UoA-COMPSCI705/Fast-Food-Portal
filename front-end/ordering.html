@@ -92,7 +92,7 @@
           </p>
           <div class="w3-center">
             <br />
-            <img src="img/tutorial.gif" alt="Avatar" style="width: 95%" />
+            <img src="img/tutorial2.gif" alt="Avatar" style="width: 95%" />
           </div>
           <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
             Once you've added all the appropriate items to the order, the timer
@@ -105,6 +105,40 @@
             <div class="w3-section">
               <button class="w3-button w3-block w3-green w3-section w3-padding">
                 Begin
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id04" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 600px"
+        >
+          <h1 id="taskcomplete" style="margin: 10px">
+            Task 1 Complete - Your Time: ...s
+          </h1>
+          <div class="w3-center">
+            <br />
+            <img
+              src="img/thumbsup.PNG"
+              alt="Avatar"
+              style="width: 95%; margin-bottom: 20px"
+            />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Great job! Task 1 has been completed and now it's time to move onto
+            the next one.
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id04').style.display='none'; disableDrag(); return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Move Onto Task 2
               </button>
             </div>
           </form>
@@ -185,7 +219,7 @@
       <img src="img/burger/cheeseburger-2.png" alt="cheeseburger" />
       <h2 class="price">$12.5</h2>
       <div class="desc-item">
-        <h3>Cheez Burger</h3>
+        <h3>Deluxe Cheese Burger</h3>
         <p>Delicious cheese!</p>
       </div>
       <button type="button" onClick="addItemMenu(2)">&#43;</button>
@@ -201,7 +235,7 @@
     </div>
     <div id="cheese-burger4" class="resize-drag menu">
       <img src="img/burger/hawaii-chicken.png" alt="hawaii chicken" />
-      <h2 class="price">$2.5</h2>
+      <h2 class="price">$12.3</h2>
       <div class="desc-item">
         <h3>Pineapple Burger</h3>
         <p>With extra pineapple :)</p>
