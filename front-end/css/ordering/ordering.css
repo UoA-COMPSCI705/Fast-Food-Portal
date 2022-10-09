@@ -387,3 +387,6 @@ hr {
 #order-menu {
     top: 78%;
 }
+#burger-component{
+    z-index: 0;
+}
