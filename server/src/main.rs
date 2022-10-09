@@ -35,7 +35,7 @@ struct Config {
         short,
         long,
         env = "Food_Portal_DB_URI",
-        default_value = "mongodb://localhost:27017"
+        default_value = "mongodb://localhost:27018"
     )]
     db_uri: String,
 
@@ -45,8 +45,7 @@ struct Config {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    let filter =
-        std::env::var("RUST_LOG").unwrap_or_else(|_| "info".to_owned());
+    let filter = std::env::var("RUST_LOG").unwrap_or_else(|_| "info".to_owned());
     tracing_subscriber::fmt::fmt()
         .with_env_filter(filter)
         .with_file(false)
