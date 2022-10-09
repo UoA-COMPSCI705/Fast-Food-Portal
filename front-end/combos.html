@@ -10,7 +10,7 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
-    <script src="js/ordering.js"></script>
+    <script src="js/combos.js"></script>
 
     <link rel="stylesheet" href="css/ordering/ordering.css" type="text/css" />
   </head>
@@ -134,12 +134,11 @@
         <hr />
         <div class="checkout">
           <div class="checkout-detail" id="qty">
-            <h5>0 item(s)</h5>
-            <h5>qty: <span>0</span></h5>
+            <h5 id="TotalItem">0 item(s)</h5>
           </div>
           <div class="checkout-detail" id="total">
             <h3>Total</h3>
-            <h3>$0</h3>
+            <h3 id="TotalCheckoutPrice">$0</h3>
           </div>
         </div>
         <div class="checkout-detail">
