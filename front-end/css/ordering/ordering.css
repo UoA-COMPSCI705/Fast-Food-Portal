@@ -154,7 +154,7 @@ body {
 .order {
   float: right;
   width: 19%;
-  height: 20%;
+  min-height: 20%;
 }
 
 .order-list {
