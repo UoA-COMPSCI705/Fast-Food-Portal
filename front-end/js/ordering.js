@@ -232,11 +232,8 @@ function addItemMenu(id) {
 
 function disableDrag() {
   interact(".resize-drag").draggable(false).resizable(false);
-  alert(
-    "You are now entering the testing phase of your design. You will be timed while completing a simple task."
-  );
   document.getElementById("controls").innerHTML =
-    'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger</p><p id="cheese-burger-task">2x Cheese Burgers</p><p id="french-fries-task">1x French Fries Original</p><p id="coca-cola-task">2x Coca Cola Drink</p>';
+    'Add the following to the order:<ul><li id="beef-burger-task">1x Beef Burger</li><li id="cheese-burger-task">2x Cheese Burgers</li><li id="french-fries-task">1x French Fries Original</li><li id="coca-cola-task">2x Coca Cola Drink</li>';
   document.getElementById("controls").style.lineHeight = "1.6";
   document.getElementById("header").innerHTML = "Task to Complete";
   document.getElementById("controls").style.lineHeight = "1.6";
@@ -244,6 +241,10 @@ function disableDrag() {
   document.getElementById("menu-list").innerHTML = "";
   document.getElementById("sidebar").innerHTML +=
     '<div id="timer">Timer: 0.00s</div>';
+}
+
+function openTimerTutorial() {
+  document.getElementById("id03").style.display = "block";
 }
 
 function fetchAll() {

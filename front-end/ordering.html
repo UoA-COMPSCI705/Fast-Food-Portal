@@ -28,8 +28,8 @@
             class="w3-container"
             onSubmit="document.getElementById('id02').style.display = 'block'; document.getElementById('id01').style.display='none'; localStorage.setItem('username', document.getElementsByTagName('input')[0].value); return false;"
           >
+            <label><b>Enter your name...</b></label>
             <div class="w3-section">
-              <label><b>Enter your name...</b></label>
               <input
                 class="w3-input w3-border w3-margin-bottom"
                 type="text"
@@ -51,16 +51,56 @@
           class="w3-modal-content w3-card-4 w3-animate-zoom"
           style="max-width: 850px"
         >
-          <h1 id="header">Tutorial</h1>
-          Tutorial text...
+          <h1 id="header" style="margin: 10px">Tutorial - Step 1, Task 1</h1>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Welcome to the Fast-Food UX Designer. In this experiment you will be
+            designing the interface for a kiosk of a made-up fast-food
+            restaurant. There are three tasks for you to complete. Below you can
+            see a demonstration of the interface builder.
+          </p>
           <div class="w3-center">
             <br />
             <img src="img/tutorial.gif" alt="Avatar" style="width: 95%" />
           </div>
-
+          <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
+            Remember to keep in mind that you are trying to demonstrate Fitts'
+            Law with your interface!
+          </p>
           <form
             class="w3-container"
             onSubmit="document.getElementById('id02').style.display='none'; return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Begin
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id03" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 850px"
+        >
+          <h1 id="header" style="margin: 10px">Tutorial - Step 2, Task 1</h1>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Now that your design has been made, tt's time to test it out! You
+            will be given a set of items you need to add to an order.
+          </p>
+          <div class="w3-center">
+            <br />
+            <img src="img/tutorial.gif" alt="Avatar" style="width: 95%" />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
+            Once you've added all the appropriate items to the order, the timer
+            will stop and you can move onto the second task.
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id03').style.display='none'; disableDrag(); return false;"
           >
             <div class="w3-section">
               <button class="w3-button w3-block w3-green w3-section w3-padding">
@@ -86,7 +126,7 @@
           id="confirm"
           type="button"
           class="btn-md fill"
-          onClick="disableDrag();"
+          onClick="openTimerTutorial();"
         >
           Confirm
         </button>
