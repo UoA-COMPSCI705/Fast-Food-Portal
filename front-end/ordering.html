@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fast food</title>
+    <title>UX Designer - Task 1</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -72,7 +72,7 @@
           >
             <div class="w3-section">
               <button class="w3-button w3-block w3-green w3-section w3-padding">
-                Begin
+                Start Designing
               </button>
             </div>
           </form>
@@ -104,7 +104,7 @@
           >
             <div class="w3-section">
               <button class="w3-button w3-block w3-green w3-section w3-padding">
-                Begin
+                Start Testing
               </button>
             </div>
           </form>
@@ -134,11 +134,11 @@
           </p>
           <form
             class="w3-container"
-            onSubmit="document.getElementById('id04').style.display='none'; disableDrag(); return false;"
+            onSubmit="document.getElementById('id04').style.display='none'; disableDrag(); window.location = 'https://www.geeksforgeeks.org/'; return false;"
           >
             <div class="w3-section">
               <button class="w3-button w3-block w3-green w3-section w3-padding">
-                Move Onto Task 2
+                Next Task
               </button>
             </div>
           </form>
@@ -170,14 +170,17 @@
       <h1 id="header">Ordering Terminal</h1>
       <div id="outlined-box"></div>
     </div>
-    <div id="beef-burger" class="resize-drag menu">
+    <div
+      id="beef-burger"
+      class="resize-drag menu button"
+      onClick="addItemMenu(0)"
+    >
       <img src="img/burger/beef.png" alt="beef" />
       <h2 class="price">$4.7</h2>
       <div class="desc-item">
         <h3>Beef burger</h3>
         <p>Typical burger material</p>
       </div>
-      <button type="button" onClick="addItemMenu(0)">&#43;</button>
     </div>
     <div id="chicken-burger" class="resize-drag menu">
       <img src="img/burger/double-chicken.png" alt="chicken" />
@@ -186,7 +189,6 @@
         <h3>Chicken deluxe</h3>
         <p>What happened to the chicken that crossed the road?</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
     <div id="bacon-burger" class="resize-drag menu">
       <img src="img/burger/bacon-3.png" alt="beef" />
@@ -195,16 +197,14 @@
         <h3>bacon burger</h3>
         <p>Porktastic!</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
-    <div id="cheese-burger" class="resize-drag menu">
+    <div id="cheese-burger" class="resize-drag menu" onClick="addItemMenu(1)">
       <img src="img/burger/cheeseburger.png" alt="cheeseburger" />
       <h2 class="price">$4.8</h2>
       <div class="desc-item">
         <h3>cheese burger</h3>
         <p>Mmm Delicious</p>
       </div>
-      <button type="button" onClick="addItemMenu(1)">&#43;</button>
     </div>
     <div id="chicken-deluxe" class="resize-drag menu">
       <img src="img/burger/double-chicken-2.png" alt="thighs" />
@@ -213,16 +213,14 @@
         <h3>Chicken deluxe 2</h3>
         <p>For the chicken lovers!</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
-    <div id="cheese-burger2" class="resize-drag menu">
+    <div id="cheese-burger2" class="resize-drag menu" onClick="addItemMenu(2)">
       <img src="img/burger/cheeseburger-2.png" alt="cheeseburger" />
       <h2 class="price">$12.5</h2>
       <div class="desc-item">
         <h3>Deluxe Cheese Burger</h3>
         <p>Delicious cheese!</p>
       </div>
-      <button type="button" onClick="addItemMenu(2)">&#43;</button>
     </div>
     <div id="cheese-burger3" class="resize-drag menu">
       <img src="img/burger/cheeseburger-3.png" alt="cheeseburger" />
@@ -231,16 +229,14 @@
         <h3>Cheesie Burger</h3>
         <p>More cheese on this cheeseburger</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
-    <div id="cheese-burger4" class="resize-drag menu">
+    <div id="cheese-burger4" class="resize-drag menu" onClick="addItemMenu(3)">
       <img src="img/burger/hawaii-chicken.png" alt="hawaii chicken" />
       <h2 class="price">$12.3</h2>
       <div class="desc-item">
         <h3>Pineapple Burger</h3>
         <p>With extra pineapple :)</p>
       </div>
-      <button type="button" onClick="addItemMenu(3)">&#43;</button>
     </div>
     <div id="order-menu" class="resize-drag order">
       <div class="order-list">

@@ -1,7 +1,7 @@
 // target elements with the "draggable" class
 interact(".draggable").draggable({
   // enable inertial throwing
-  inertia: true,
+  inertia: false,
   // keep the element within the area of it's parent
   modifiers: [
     interact.modifiers.restrictRect({
@@ -112,7 +112,7 @@ interact(".resize-drag")
   })
   .draggable({
     listeners: { move: window.dragMoveListener },
-    inertia: true,
+    inertia: false,
     modifiers: [
       interact.modifiers.restrictRect({
         restriction: "parent",
@@ -218,19 +218,19 @@ function addItemMenu(id) {
       }
     } else if (id == 2) {
       document.getElementById("menu-list").innerHTML +=
-        '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
+        '<div class="order-item"><div class="details"><img src="img/burger/cheeseburger-2.png"><div class="detail-item"><h5 style="margin-bottom:10px">Deluxe Cheese Burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
       friesCounter -= 1;
       if (friesCounter == 0) {
         document.getElementById("french-fries-task").innerHTML =
-          "1̶x̶ ̶F̶r̶e̶n̶c̶h̶ ̶F̶r̶i̶e̶s̶ ̶O̶r̶i̶g̶i̶n̶a̶l̶";
+          "1̶x̶ ̶D̶e̶l̶u̶x̶e̶ ̶C̶h̶e̶e̶s̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       }
     } else if (id == 3) {
       document.getElementById("menu-list").innerHTML +=
-        '<div class="order-item"><div class="details"><img src="img/drink/coca-cola.png"><div class="detail-item"><h5 style="margin-bottom:10px">Coca Cola Drink</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
+        '<div class="order-item"><div class="details"><img src="img/burger/hawaii-chicken.png"><div class="detail-item"><h5 style="margin-bottom:10px">Pineapple Burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
       colaCounter -= 1;
       if (colaCounter == 0) {
         document.getElementById("coca-cola-task").innerHTML =
-          "2̶x̶ ̶C̶o̶c̶a̶ ̶C̶o̶l̶a̶ ̶D̶r̶i̶n̶k̶";
+          "2̶x̶ ̶P̶i̶n̶e̶a̶p̶p̶l̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       }
     }
   }
