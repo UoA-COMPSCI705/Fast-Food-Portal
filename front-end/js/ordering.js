@@ -241,7 +241,7 @@ function disableDrag() {
   document.getElementById("controls").innerHTML =
     'Add the following to the order:<ul><li id="beef-burger-task">1x Beef Burger</li><li id="cheese-burger-task">2x Cheese Burgers</li><li id="french-fries-task">1x Deluxe Cheese Burger</li><li id="coca-cola-task">2x Pineapple Burger</li>';
   document.getElementById("controls").style.lineHeight = "1.6";
-  document.getElementById("header").innerHTML = "Task to Complete";
+  document.getElementById("header2").innerHTML = "Task to Complete";
   document.getElementById("controls").style.lineHeight = "1.6";
   taskMode = true;
   document.getElementById("menu-list").innerHTML = "";
