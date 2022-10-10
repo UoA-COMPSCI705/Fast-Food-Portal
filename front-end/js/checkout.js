@@ -173,6 +173,7 @@ let colaCounter = 2;
 let timer = 0;
 
 function stage2Alert() {
+  document.getElementById("id02").style.display = "block";
   alert(
     "Tips: To achieve better user experience,we introduced EnableModal button at this stage.\nThis button will enable the functionalities of the two buttons inside of each order items. Please click this button after finishing design the interface, there will be two more modals for you to re-design. Enjoy the task."
   );
