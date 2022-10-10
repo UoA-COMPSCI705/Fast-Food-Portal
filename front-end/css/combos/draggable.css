@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
+
+#drag-bacon-burger, #drag-cheese-burger, #drag-chicken-burger, #drag-beef-burger {
+    width: 50%;
+    height: 20%;
+    margin: 1rem 0 0 1rem;
+    background-color: #deb887;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    font-family: Arial;
+    position: relative;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    font-family: Arial;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.center-text {
+    text-align: center;
+    align-items: center;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0.95em;
+    border: none;
+    color: black;
+    font-size: 1.3vw;
+    text-decoration: none;
+    display: block;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: rgba(100, 149, 100, 100);
+    color: white;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 25%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: grey; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    font-family: Arial;
+}
+
+#button-bacon-burger, #button-cheese-burger, #button-chicken-burger, #button-beef-burger {
+    background-color: rgba(100, 149, 237, 100);
+    padding: 0px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#reset {
+  position: relative;
+  margin-right: 0;
+}
+
+#workspace {
+    height: 100%;
+    width: 75%;
+    position: fixed;
+    left: 25%;
+    right: 1400px;
+}
+
+#dropzone-1 {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    position: relative;
+}
+
+.dropzone {
+    background-color: #bfe4ff;
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 90%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #29e;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+    margin: 1rem 0 0 1rem;
+    color: #fff;
+    background-color: #29e;
+    border: solid 2px #fff;
+    touch-action: none;
+    transform: translate(0px, 0px);
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: #4e4;
+}
