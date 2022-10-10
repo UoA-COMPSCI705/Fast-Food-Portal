@@ -10,7 +10,6 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
-    <script src="js/checkout.js"></script>
 
     <link rel="stylesheet" href="css/checkout/checkout.css" type="text/css" />
     <link
@@ -20,6 +19,106 @@
   </head>
 
   <body>
+    <div class="w3-container">
+      <div id="id02" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 850px"
+        >
+          <h1 id="header" style="margin: 10px">Tutorial - Step 1, Task 1</h1>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Welcome to the Fast-Food UX Designer. In this experiment you will be
+            designing the interface for a kiosk of a made-up fast-food
+            restaurant. There are three tasks for you to complete. Below you can
+            see a demonstration of the interface builder.
+          </p>
+          <div class="w3-center">
+            <br />
+            <img src="img/tutorial.gif" alt="Avatar" style="width: 95%" />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
+            Remember to keep in mind that you are trying to demonstrate Fitts'
+            Law with your interface!
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id02').style.display='none'; return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Start Designing
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id03" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 850px"
+        >
+          <h1 id="header" style="margin: 10px">Tutorial - Step 2, Task 1</h1>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Now that your design has been made, tt's time to test it out! You
+            will be given a set of items you need to add to an order.
+          </p>
+          <div class="w3-center">
+            <br />
+            <img src="img/tutorial2.gif" alt="Avatar" style="width: 95%" />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
+            Once you've added all the appropriate items to the order, the timer
+            will stop and you can move onto the second task.
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id03').style.display='none'; disableDrag(); return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Start Testing
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id04" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 600px"
+        >
+          <h1 id="taskcomplete" style="margin: 10px">
+            Task 1 Complete - Your Time: ...s
+          </h1>
+          <div class="w3-center">
+            <br />
+            <img
+              src="img/thumbsup.PNG"
+              alt="Avatar"
+              style="width: 95%; margin-bottom: 20px"
+            />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Great job! Task 1 has been completed and now it's time to move onto
+            the next one.
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id04').style.display='none'; disableDrag(); window.location = 'checkout.html'; return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Next Task
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div id="sidebar">
       <h1 id="header">Components</h1>
       <div id="controls">
@@ -35,7 +134,7 @@
           id="confirm"
           type="button"
           class="btn-md fill"
-          onclick="disableDrag();"
+          onClick="openTimerTutorial();"
         >
           Confirm
         </button>
@@ -51,6 +150,7 @@
     </div>
     <div id="workspace">
       <h1 id="header">Checkout Terminal</h1>
+      <div id="outlined-box"></div>
     </div>
 
     <!-- <div id="hold-order-btn" class="resize-drag checkout-detail" >
@@ -248,4 +348,5 @@
       <h2 class="price">$2.50</h2>
     </div>
   </body>
+  <script src="js/checkout.js"></script>
 </html>

@@ -171,12 +171,23 @@ let cheeseCounter = 2;
 let friesCounter = 1;
 let colaCounter = 2;
 let timer = 0;
+let misclicks = -6;
 
 function stage2Alert() {
   document.getElementById("id02").style.display = "block";
   alert(
-    "Tips: To achieve better user experience,we introduced EnableModal button at this stage.\nThis button will enable the functionalities of the two buttons inside of each order items. Please click this button after finishing design the interface, there will be two more modals for you to re-design. Enjoy the task."
+    "Tips: To achieve better user experience, we introduced EnableModal button at this stage.\nThis button will enable the functionalities of the two buttons inside of each order items. Please click this button after finishing design the interface, there will be two more modals for you to re-design. Enjoy the task."
   );
+}
+
+window.addEventListener("click", (event) => {
+  if (taskMode) {
+    misclicks = misclicks + 1;
+  }
+});
+
+function openTimerTutorial() {
+  document.getElementById("id03").style.display = "block";
 }
 
 window.onload = stage2Alert();
@@ -200,11 +211,10 @@ function myTimer() {
     timer += 1;
     document.getElementById("timer").innerHTML = "Timer: " + timer / 100 + "s";
     if (taskComplete == true) {
-      alert(
-        "The task is completed... You did it in " +
-          timer / 100 +
-          "s. Great work!"
-      );
+      document.getElementById("id04").style.display = "block";
+      document.getElementById("taskcomplete").innerHTML =
+        "Task 2 Complete - Your Time: " + timer / 100 + "s";
+      store(localStorage.getItem("username"), 2, timer / 100, misclicks);
     }
   }
 }
