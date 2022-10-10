@@ -1,2 +1,15 @@
-# Fast-Food-Portal
-Implementation
+# Fast Food Portal for Fitts' Law Training
+### Darryn, David, Guanyan, Jane, Kevin, Namodh - Group 2
+
+## Project Introduction
+This project designed a web application to help undergraduate students understand the design considerations for better user interaction based on Fitts' Law. The students are asked to design 3 interfaces for a Fast Food Ordering Portal that enhances usability and efficiency. After the design phases, the students will carry out specific tasks in the 3 interfaces, for which the speed and accuracy will be observed for evaluation. This is done by timing each task, and observing the ammount of misclicks for each task, respectively. 
+
+## Setting Up
+The setting up is quite straightforward as it is using base javascript, CSS and HTML on the frontend. The server connections (for result collection) are setup through the backend, by default. Simply clone/download the repository and open `ordering.html`. 
+
+## Page Layout
+  - Task 1 (with Tutorial)
+  
+  - Task 2 (with Tutorial)
+  
+  - Task 3 (with Tutorial)
