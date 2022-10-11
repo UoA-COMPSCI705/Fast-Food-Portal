@@ -10,7 +10,7 @@ This project designed a web application to help undergraduate students understan
 ```bash
 npm install --save interactjs
 ```
-The setting up is quite straightforward as it is using base javascript, CSS and HTML on the frontend. The server connections (for result collection) are setup through the backend, by default. Simply clone/download the repository and open `ordering.html`. 
+The setting up is quite straightforward as it is using base javascript, CSS and HTML on the frontend. The server connections (for result collection) are setup through the backend, by default. Simply clone/download the repository and open `index.html`. 
 
 ## Page Layout
   - Task 1 (with Tutorial)
