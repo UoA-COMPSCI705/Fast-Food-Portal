@@ -3,6 +3,7 @@
 [![Generic badge](https://img.shields.io/badge/build-passing-<COLOR>.svg)](https://shields.io/)
 ## Project Introduction
 This project designed a web application to help undergraduate students understand the design considerations for better user interaction based on Fitts' Law. The students are asked to design 3 interfaces for a Fast Food Ordering Portal that enhances usability and efficiency. Firstly, the users have to design the interface for ordering numerous burgers. Next, they design a portal to add sides for specific burgers. The final task creates an interface to select Combos consisting of Burgers, Sides and Drinks. After the design phases, the students will carry out specific tasks in the 3 interfaces, for which the speed and accuracy will be observed for evaluation. This is done by timing each task, and observing the ammount of misclicks for each task, respectively. 
+All expectations for the implementaion in the Project Plan have been achieved. However, the focus has shifted from a Point of Sales to a Fast Food Portal for better usability.
 ### Research Question
 How effectively and efficiently did the realistic fast food application enhance the knowledge transfer(acquisition) of Fitts' Law concepts for university students?
 ## Deployed Site (Fully Functional)
