@@ -19,22 +19,24 @@
   </head>
 
   <body>
+    <div id="burger-component" class="resize-drag menu">
+      <h3>Add sides to you order</h3>
+    </div>
     <div class="w3-container">
       <div id="id02" class="w3-modal">
         <div
           class="w3-modal-content w3-card-4 w3-animate-zoom"
           style="max-width: 850px"
         >
-          <h1 id="header" style="margin: 10px">Tutorial - Step 1, Task 1</h1>
+          <h1 id="header" style="margin: 10px">Tutorial - Step 1, Task 2</h1>
           <p style="margin-left: 20px; margin-right: 20px">
-            Welcome to the Fast-Food UX Designer. In this experiment you will be
-            designing the interface for a kiosk of a made-up fast-food
-            restaurant. There are three tasks for you to complete. Below you can
-            see a demonstration of the interface builder.
+            Now that the main ordering menu has been completed, you will be
+            desiging a menu that allows users to add sides to their orders. You
+            will have a special sides component to give structure to you design.
           </p>
           <div class="w3-center">
             <br />
-            <img src="img/tutorial.gif" alt="Avatar" style="width: 95%" />
+            <img src="img/tutorial3.gif" alt="Avatar" style="width: 95%" />
           </div>
           <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
             Remember to keep in mind that you are trying to demonstrate Fitts'
@@ -59,18 +61,18 @@
           class="w3-modal-content w3-card-4 w3-animate-zoom"
           style="max-width: 850px"
         >
-          <h1 id="header" style="margin: 10px">Tutorial - Step 2, Task 1</h1>
+          <h1 id="header" style="margin: 10px">Tutorial - Step 2, Task 2</h1>
           <p style="margin-left: 20px; margin-right: 20px">
-            Now that your design has been made, tt's time to test it out! You
+            Now that your design has been made, it's time to test it out! You
             will be given a set of items you need to add to an order.
           </p>
           <div class="w3-center">
             <br />
-            <img src="img/tutorial2.gif" alt="Avatar" style="width: 95%" />
+            <img src="img/tutorial4.gif" alt="Avatar" style="width: 95%" />
           </div>
           <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
             Once you've added all the appropriate items to the order, the timer
-            will stop and you can move onto the second task.
+            will stop and you can move onto the third task.
           </p>
           <form
             class="w3-container"
@@ -92,7 +94,7 @@
           style="max-width: 600px"
         >
           <h1 id="taskcomplete" style="margin: 10px">
-            Task 1 Complete - Your Time: ...s
+            Task 2 Complete - Your Time: ...s
           </h1>
           <div class="w3-center">
             <br />
@@ -103,12 +105,12 @@
             />
           </div>
           <p style="margin-left: 20px; margin-right: 20px">
-            Great job! Task 1 has been completed and now it's time to move onto
+            Great job! Task 2 has been completed and now it's time to move onto
             the next one.
           </p>
           <form
             class="w3-container"
-            onSubmit="document.getElementById('id04').style.display='none'; disableDrag(); window.location = 'checkout.html'; return false;"
+            onSubmit="document.getElementById('id04').style.display='none'; window.location = 'combos.html'; return false;"
           >
             <div class="w3-section">
               <button class="w3-button w3-block w3-green w3-section w3-padding">
@@ -120,7 +122,7 @@
       </div>
     </div>
     <div id="sidebar">
-      <h1 id="header">Components</h1>
+      <h1 id="header2">Components</h1>
       <div id="controls">
         <button
           id="reset"
@@ -138,14 +140,6 @@
         >
           Confirm
         </button>
-        <button
-          id="enable-modal"
-          type="button"
-          class="btn-md fill"
-          onclick="enableModalListener()"
-        >
-          EnableModal
-        </button>
       </div>
     </div>
     <div id="workspace">
@@ -156,24 +150,115 @@
     <!-- <div id="hold-order-btn" class="resize-drag checkout-detail" >
         <button type="button" class="btn-md outline">hold order</button>
     </div> -->
-    <div id="check-out-btn" class="resize-drag checkout-detail">
-      <button
-        type="button"
-        class="btn-md fill"
-        id="checkout-btn"
-        onclick="finish()"
-      >
-        checkout
-      </button>
-    </div>
+
     <div id="order-menu" class="resize-drag order">
       <div class="order-list">
         <h3>Order Summary</h3>
         <hr />
-        <div class="order-inner">
-          <div class="order-null">
-            <i class="fas fa-clipboard-list"></i>
-            <p id="inputPrompt">Drag Cart Items Into Here</p>
+        <div id="menu-list" class="order-inner">
+          <div class="order-item">
+            <div class="details">
+              <img src="img/burger/beef.png" />
+              <div class="detail-item">
+                <h5 style="margin-bottom: 10px">beef burger</h5>
+                <a
+                  class="btn-sm min"
+                  href="javascript:void(0)"
+                  onclick="btnMinusOrder(event)"
+                ></a
+                ><small>1</small
+                ><a
+                  class="btn-sm max"
+                  href="javascript:void(0)"
+                  onclick="btnPlusOrder(event)"
+                ></a
+                ><a
+                  class="remove"
+                  href="javascript:void(0)"
+                  onclick="btnRemoveOrder(event)"
+                  >delete</a
+                >
+              </div>
+            </div>
+            <h2 class="price">$4.7</h2>
+          </div>
+          <div class="order-item">
+            <div class="details">
+              <img src="img/burger/cheeseburger.png" />
+              <div class="detail-item">
+                <h5 style="margin-bottom: 10px">Chese Burger</h5>
+                <a
+                  class="btn-sm min"
+                  href="javascript:void(0)"
+                  onclick="btnMinusOrder(event)"
+                ></a
+                ><small>2</small
+                ><a
+                  class="btn-sm max"
+                  href="javascript:void(0)"
+                  onclick="btnPlusOrder(event)"
+                ></a
+                ><a
+                  class="remove"
+                  href="javascript:void(0)"
+                  onclick="btnRemoveOrder(event)"
+                  >delete</a
+                >
+              </div>
+            </div>
+            <h2 class="price">$4.8</h2>
+          </div>
+          <div class="order-item">
+            <div class="details">
+              <img src="img/burger/cheeseburger-2.png" />
+              <div class="detail-item">
+                <h5 style="margin-bottom: 10px">Deluxe Cheese Burger</h5>
+                <a
+                  class="btn-sm min"
+                  href="javascript:void(0)"
+                  onclick="btnMinusOrder(event)"
+                ></a
+                ><small>1</small
+                ><a
+                  class="btn-sm max"
+                  href="javascript:void(0)"
+                  onclick="btnPlusOrder(event)"
+                ></a
+                ><a
+                  class="remove"
+                  href="javascript:void(0)"
+                  onclick="btnRemoveOrder(event)"
+                  >delete</a
+                >
+              </div>
+            </div>
+            <h2 class="price">$12.5</h2>
+          </div>
+          <div class="order-item">
+            <div class="details">
+              <img src="img/burger/hawaii-chicken.png" />
+              <div class="detail-item">
+                <h5 style="margin-bottom: 10px">Pineapple Burger</h5>
+                <a
+                  class="btn-sm min"
+                  href="javascript:void(0)"
+                  onclick="btnMinusOrder(event)"
+                ></a
+                ><small>2</small
+                ><a
+                  class="btn-sm max"
+                  href="javascript:void(0)"
+                  onclick="btnPlusOrder(event)"
+                ></a
+                ><a
+                  class="remove"
+                  href="javascript:void(0)"
+                  onclick="btnRemoveOrder(event)"
+                  >delete</a
+                >
+              </div>
+            </div>
+            <h2 class="price">$2.5</h2>
           </div>
         </div>
         <hr />
@@ -183,63 +268,6 @@
             <h3 id="TotalCheckoutPrice">$13.8</h3>
           </div>
         </div>
-      </div>
-    </div>
-    <div id="orderitem3" class="order-item resize-drag">
-      <div class="details">
-        <img src="img/burger/beef-2.png" />
-        <div class="detail-item">
-          <h5 style="margin-bottom: 10px">beef burger 2</h5>
-          <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem3()">Remove</a>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
-        </div>
-      </div>
-      <h2 class="price">$4.90</h2>
-      <div id="add-btn-3-div" class="resize-drag">
-        <button class="add-btn edit-item">&#43;</button>
-      </div>
-      <div id="edit-btn-3-div" class="resize-drag">
-        <button class="add-btn add-size">
-          <i class="fa fa-cog" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-    <div id="orderitem2" class="order-item resize-drag">
-      <div class="details">
-        <img src="img/burger/hawaii-chicken.png" />
-        <div class="detail-item">
-          <h5 style="margin-bottom: 10px">Hawaii Chicken</h5>
-          <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem2()">Remove</a>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
-        </div>
-      </div>
-      <h2 class="price">$5.90</h2>
-      <div id="add-btn-2-div" class="resize-drag">
-        <button class="add-btn edit-item">&#43;</button>
-      </div>
-      <div id="edit-btn-2-div" class="resize-drag">
-        <button class="add-btn add-size">
-          <i class="fa fa-cog" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-    <div id="orderitem1" class="order-item resize-drag">
-      <div class="details">
-        <img src="img/burger/cheeseburger-2.png" />
-        <div class="detail-item">
-          <h5 style="margin-bottom: 10px">Cheeseburger</h5>
-          <!-- <a id="edit" class="remove" href="javascript:void(0)" onclick="removeitem1()">Remove</a>
-                <a id="edit" class="remove" href="javascript:void(0)" onclick="openModal()">EDIT</a> -->
-        </div>
-      </div>
-      <h2 class="price">$3.00</h2>
-      <div id="add-btn-1-div" class="resize-drag">
-        <button class="add-btn edit-item">&#43;</button>
-      </div>
-      <div id="edit-btn-1-div" class="resize-drag">
-        <button class="add-btn add-size">
-          <i class="fa fa-cog" aria-hidden="true"></i>
-        </button>
       </div>
     </div>
     <div class="modal resize-drag" id="addings">
@@ -346,6 +374,70 @@
         </div>
       </div>
       <h2 class="price">$2.50</h2>
+    </div>
+
+    <div id="bacon-burger" class="resize-drag menu" onClick="addItemMenu(2)">
+      <img src="img/drink/slushie.png" alt="beef" />
+      <h2 class="price">$2.5</h2>
+      <div class="desc-item">
+        <h3>Rainbow Slushie</h3>
+        <p>A Colourful Sensation!</p>
+      </div>
+    </div>
+    <div id="cheese-burger" class="resize-drag menu" onClick="addItemMenu(3)">
+      <img src="img/chicken/deluxe-1.png" alt="chesee" />
+      <h2 class="price">$4.8</h2>
+      <div class="desc-item">
+        <h3>Chicken Deluxe</h3>
+        <p>Mmm Delicious</p>
+      </div>
+    </div>
+    <div id="chicken-deluxe" class="resize-drag menu">
+      <img src="img/chicken/deluxe-2.png" alt="thighs" />
+      <h2 class="price">$6.3</h2>
+      <div class="desc-item">
+        <h3>Chicken deluxe 2</h3>
+        <p>For the chicken lovers!</p>
+      </div>
+    </div>
+    <div id="fries" class="resize-drag menu" onClick="addItemMenu(1)">
+      <img src="img/fries/fries-4.png" alt="original" />
+      <h2 class="price">$12.5</h2>
+      <div class="desc-item">
+        <h3>French fries original</h3>
+        <p>French Fries Flavour</p>
+      </div>
+    </div>
+    <div id="hot-fries" class="resize-drag menu">
+      <img src="img/fries/hot-fries.png" alt="hot" />
+      <h2 class="price">$12.5</h2>
+      <div class="desc-item">
+        <h3>Hot Spicy fries</h3>
+        <p>Crispy Fries</p>
+      </div>
+    </div>
+    <div id="coca-cola" class="resize-drag menu" onClick="addItemMenu(0)">
+      <img src="img/drink/coca-cola.png" alt="coca cola" />
+      <h2 class="price">$2.5</h2>
+      <div class="desc-item">
+        <h3>Coca cola drink</h3>
+        <p>This is a coca-cola</p>
+      </div>
+    </div>
+    <div id="check-out-btn" class="resize-drag checkout-detail">
+      <button
+        type="button"
+        class="btn-md fill"
+        id="checkout-btn"
+        onclick="finish()"
+      >
+        checkout
+      </button>
+    </div>
+    <div id="hold-order-btn" class="resize-drag checkout-detail">
+      <button type="button" class="btn-md fill" id="holdorder-btn">
+        Hold Order
+      </button>
     </div>
   </body>
   <script src="js/checkout.js"></script>

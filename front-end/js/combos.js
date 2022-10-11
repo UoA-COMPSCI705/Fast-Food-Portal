@@ -169,7 +169,7 @@ let friesCounter = 1;
 let colaCounter = 1;
 let timer = 0;
 
-let misclicks = -6;
+let misclicks = -3;
 
 let totalprice = 0;
 let totalitem = 0;

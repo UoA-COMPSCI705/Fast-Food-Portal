@@ -171,13 +171,10 @@ let cheeseCounter = 2;
 let friesCounter = 1;
 let colaCounter = 2;
 let timer = 0;
-let misclicks = -6;
+let misclicks = -7;
 
 function stage2Alert() {
   document.getElementById("id02").style.display = "block";
-  alert(
-    "Tips: To achieve better user experience, we introduced EnableModal button at this stage.\nThis button will enable the functionalities of the two buttons inside of each order items. Please click this button after finishing design the interface, there will be two more modals for you to re-design. Enjoy the task."
-  );
 }
 
 window.addEventListener("click", (event) => {
@@ -210,7 +207,9 @@ function myTimer() {
   if (taskMode && taskComplete == false) {
     timer += 1;
     document.getElementById("timer").innerHTML = "Timer: " + timer / 100 + "s";
-    if (taskComplete == true) {
+    if (confirmed) {
+      taskComplete = true;
+      console.log("Task Completed");
       document.getElementById("id04").style.display = "block";
       document.getElementById("taskcomplete").innerHTML =
         "Task 2 Complete - Your Time: " + timer / 100 + "s";
@@ -219,21 +218,52 @@ function myTimer() {
   }
 }
 
+function addItemMenu(id) {
+  if (taskMode) {
+    if (id == 0) {
+      document.getElementById("menu-list").innerHTML +=
+        '<div class="order-item"><div class="details"><img src="img/drink/coca-cola.png"><div class="detail-item"><h5 style="margin-bottom:10px">Coca Cola</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.7</h2></div>';
+      beefCounter -= 1;
+      if (beefCounter == 0) {
+        document.getElementById("beef-burger-task").innerHTML =
+          "1̶x̶ ̶C̶o̶c̶a̶ ̶C̶o̶l̶a̶ ̶D̶r̶i̶n̶k̶";
+      }
+    } else if (id == 1) {
+      document.getElementById("menu-list").innerHTML +=
+        '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
+      cheeseCounter -= 1;
+      if (cheeseCounter == 0) {
+        document.getElementById("cheese-burger-task").innerHTML =
+          "2̶x̶ ̶F̶r̶e̶n̶c̶h̶ ̶F̶r̶i̶e̶s̶ ̶O̶r̶i̶g̶i̶n̶a̶l̶";
+      }
+    } else if (id == 2) {
+      document.getElementById("menu-list").innerHTML +=
+        '<div class="order-item"><div class="details"><img src="img/drink/slushie.png"><div class="detail-item"><h5 style="margin-bottom:10px">Rainbow Slushie</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
+      friesCounter -= 1;
+      if (friesCounter == 0) {
+        document.getElementById("french-fries-task").innerHTML =
+          "1̶x̶ ̶R̶a̶i̶n̶b̶o̶w̶ ̶S̶l̶u̶s̶h̶i̶e̶";
+      }
+    } else if (id == 3) {
+      document.getElementById("menu-list").innerHTML +=
+        '<div class="order-item"><div class="details"><img src="img/chicken/deluxe-1.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chicken Deluxe</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
+      colaCounter -= 1;
+      if (colaCounter == 0) {
+        document.getElementById("coca-cola-task").innerHTML =
+          "2̶x̶ ̶C̶h̶i̶c̶k̶e̶n̶ ̶D̶e̶l̶u̶x̶e̶";
+      }
+    }
+  }
+}
+
 function disableDrag() {
   interact(".resize-drag").draggable(false).resizable(false);
-  document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totprice;
-  document.getElementById("inputPrompt").innerHTML = "";
-  confirmed = true;
   // document.getElementById('chipcount').innerHTML= chips;
   // document.getElementById('colacount').innerHTML= cola;
-
-  alert(
-    "You are now entering the testing phase of your design. You will be timed while completing a simple task."
-  );
   document.getElementById("controls").innerHTML =
-    'Add the following to the order:<br><p id="beef-burger-task">1x Beef Burger w/ Cheese s/ Coke</p><p id="cheese-burger-task">2x Cheese Burger w/ Chips</p><p id="french-fries-task">Hawaii Chicken w/ Pickles w/ Cheese</p>';
+    'Add the following to the order:<ul><li id="beef-burger-task">1x Coca Cola Drink</li><li id="cheese-burger-task">2x French Fries Original</li><li id="french-fries-task">1x Rainbow Slushie</li><li id="coca-cola-task">2x Chicken Deluxe</li><li>Once everything has been added to the order, press the "Checkout" button.</li>';
   document.getElementById("controls").style.lineHeight = "1.6";
-  document.getElementById("header").innerHTML = "Task to Complete";
+  document.getElementById("header2").innerHTML = "Task to Complete";
   document.getElementById("controls").style.lineHeight = "1.6";
   taskMode = true;
   // document.getElementById("menu-list").innerHTML = "";
@@ -298,13 +328,14 @@ function addPickles() {
 }
 
 function finish() {
-  if (confirmed) {
-    taskComplete = true;
-    let timesec = timer / 100;
-    document.getElementById("controls").innerHTML =
-      "Well Done! You completed the task in " +
-      timesec +
-      " seconds. Onto the next one.";
+  if (
+    taskMode &&
+    beefCounter <= 0 &&
+    cheeseCounter <= 0 &&
+    friesCounter <= 0 &&
+    colaCounter <= 0
+  ) {
+    confirmed = true;
   }
 }
 

@@ -51,9 +51,8 @@ body {
 .menu {
   /* border: 1px solid #fff; */
   float: left;
-  width: 13.5%;
-  height: 220px;
-  min-height: 220px;
+  width: 9%;
+  height: 15%;
   padding: 13px;
   text-transform: capitalize;
   font-size: 13px;
@@ -71,10 +70,11 @@ body {
 }
 
 .menu img {
-  position: relative;
-  width: 60%;
-  margin-top: 20%;
-  margin-left: 0px;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  margin-bottom: 8px;
   transform: rotate(-5deg);
   filter: drop-shadow(0 10px 15px rgba(38, 43, 47, 0.7));
   transition: 0.3s ease-out;
@@ -196,7 +196,6 @@ body {
 }
 
 .order-item {
-  top: 555px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -363,6 +362,10 @@ hr {
   padding: 10px;
 }
 
+#header2 {
+  padding: 10px;
+}
+
 #controls {
   bottom: 10%;
 }
@@ -386,19 +389,56 @@ hr {
   top: 100px;
 }
 
+#burger-component {
+  top: 10%;
+  left: 30%;
+  width: 20%;
+}
+
 #hold-order-btn {
-  top: 650px;
+  top: 90%;
+  left: 6.5%;
   height: 50px;
-  z-index: 10;
+}
+
+#bacon-burger {
+  top: 35%;
+}
+
+#cheese-burger {
+  top: 35%;
+  left: 10%;
+}
+
+#chicken-deluxe {
+  top: 52%;
+}
+
+#fries {
+  top: 52%;
+  left: 10%;
+}
+
+#hot-fries {
+  top: 69%;
+}
+
+#coca-cola {
+  top: 69%;
+  left: 10%;
 }
 
 #check-out-btn {
-  top: 80%;
+  top: 90%;
   height: 50px;
-  z-index: 10;
 }
 
 #checkout-btn {
+  font-size: 100%;
+  width: 100%;
+}
+
+#holdorder-btn {
   font-size: 100%;
   width: 100%;
 }
