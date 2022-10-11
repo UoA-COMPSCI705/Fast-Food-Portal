@@ -1,3 +1,4 @@
+let totalprice = 0;
 // target elements with the "draggable" class
 interact(".draggable").draggable({
   // enable inertial throwing
@@ -201,6 +202,7 @@ window.addEventListener("click", (event) => {
 function addItemMenu(id) {
   if (taskMode) {
     if (id == 0) {
+      totalprice += 4.7;
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/burger/beef.png"><div class="detail-item"><h5 style="margin-bottom:10px">beef burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.7</h2></div>';
       beefCounter -= 1;
@@ -208,7 +210,9 @@ function addItemMenu(id) {
         document.getElementById("beef-burger-task").innerHTML =
           "1̶x̶ ̶B̶e̶e̶f̶ ̶B̶u̶r̶g̶e̶r̶";
       }
+      document.getElementById("TotalPrice").innerHTML = "$" + totalprice
     } else if (id == 1) {
+      totalprice += 4.8;
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/burger/cheeseburger.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chese Burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
       cheeseCounter -= 1;
@@ -216,7 +220,9 @@ function addItemMenu(id) {
         document.getElementById("cheese-burger-task").innerHTML =
           "2̶x̶ ̶C̶h̶e̶e̶s̶e̶ ̶B̶u̶r̶g̶e̶r̶s̶";
       }
+      document.getElementById("TotalPrice").innerHTML = "$" + totalprice
     } else if (id == 2) {
+      totalprice += 12.5;
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/burger/cheeseburger-2.png"><div class="detail-item"><h5 style="margin-bottom:10px">Deluxe Cheese Burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
       friesCounter -= 1;
@@ -224,7 +230,9 @@ function addItemMenu(id) {
         document.getElementById("french-fries-task").innerHTML =
           "1̶x̶ ̶D̶e̶l̶u̶x̶e̶ ̶C̶h̶e̶e̶s̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       }
+      document.getElementById("TotalPrice").innerHTML = "$" + totalprice
     } else if (id == 3) {
+      totalprice += 12.3;
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/burger/hawaii-chicken.png"><div class="detail-item"><h5 style="margin-bottom:10px">Pineapple Burger</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
       colaCounter -= 1;
@@ -232,6 +240,7 @@ function addItemMenu(id) {
         document.getElementById("coca-cola-task").innerHTML =
           "2̶x̶ ̶P̶i̶n̶e̶a̶p̶p̶l̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       }
+      document.getElementById("TotalPrice").innerHTML = "$" + totalprice;
     }
   }
 }
