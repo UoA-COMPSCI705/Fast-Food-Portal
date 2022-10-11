@@ -212,7 +212,7 @@ body {
   text-align: center;
   padding: 3px;
 }
-.order-item:active{
+.order-item:active {
   border-color: orange;
 }
 
@@ -356,6 +356,15 @@ hr {
 
 .resize-drag:hover {
   border: dashed;
+  border-color: #e3a34c;
+}
+
+.resize-drag-2 {
+  border-radius: 0.75em;
+}
+
+.resize-drag-2:hover {
+  border: solid;
   border-color: #e3a34c;
 }
 

@@ -6,7 +6,7 @@ let isconfirmed = false;
 // target elements with the "draggable" class
 interact(".draggable").draggable({
   // enable inertial throwing
-  inertia: true,
+  inertia: false,
   // keep the element within the area of it's parent
   modifiers: [
     interact.modifiers.restrictRect({
@@ -117,7 +117,7 @@ interact(".resize-drag")
   })
   .draggable({
     listeners: { move: window.dragMoveListener },
-    inertia: true,
+    inertia: false,
     modifiers: [
       interact.modifiers.restrictRect({
         restriction: "parent",
@@ -167,10 +167,10 @@ interact(".dropzone").dropzone({
 
 let taskMode = false;
 let taskComplete = false;
-let beefCounter = 1;
-let cheeseCounter = 2;
-let friesCounter = 1;
-let colaCounter = 2;
+let stage1Complete = false;
+let stage2Complete = false;
+let stage3Complete = false;
+let stage4Complete = false;
 let timer = 0;
 let misclicks = -7;
 
@@ -228,61 +228,110 @@ function myTimer() {
 }
 
 function addItemMenu(id) {
-  if (isconfirmed){
-    document.getElementById("item10").style.backgroundColor = "transparent";
-    document.getElementById("item11").style.backgroundColor = "transparent";
-    document.getElementById("item12").style.backgroundColor = "transparent";
-    document.getElementById("item13").style.backgroundColor = "transparent";
-    document.getElementById("burger-component").style.display = "none";
-    document.getElementById("bacon-burger").style.display = "none";
-    document.getElementById("cheese-burger").style.display = "none";
-    document.getElementById("chicken-deluxe").style.display = "none";
-    document.getElementById("fries").style.display = "none";
-    document.getElementById("hot-fries").style.display = "none";
-    document.getElementById("coca-cola").style.display = "none";
-  }
-  
   if (taskMode) {
-    if (id == 0) {
+    if (id == 0 && stage1Complete == false) {
+      stage1Complete = true;
+      stageActive = false;
+      if (isconfirmed) {
+        document.getElementById("item10").style.backgroundColor = "transparent";
+        document.getElementById("item11").style.backgroundColor = "transparent";
+        document.getElementById("item12").style.backgroundColor = "transparent";
+        document.getElementById("item13").style.backgroundColor = "transparent";
+        document.getElementById("burger-component").style.display = "none";
+        document.getElementById("bacon-burger").style.display = "none";
+        document.getElementById("cheese-burger").style.display = "none";
+        document.getElementById("chicken-deluxe").style.display = "none";
+        document.getElementById("fries").style.display = "none";
+        document.getElementById("hot-fries").style.display = "none";
+        document.getElementById("coca-cola").style.display = "none";
+      }
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/drink/coca-cola.png"><div class="detail-item"><h5 style="margin-bottom:10px">Coca Cola (for Beef Burger) </h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.7</h2></div>';
-      beefCounter -= 1;
-      if (beefCounter == 0) {
-        document.getElementById("beef-burger-task").innerHTML =
-          "1̶x̶ ̶C̶o̶c̶a̶ ̶C̶o̶l̶a̶ ̶D̶r̶i̶n̶k̶";
+      document.getElementById("beef-burger-task").innerHTML =
+        "A̶d̶d̶ ̶C̶o̶c̶a̶ ̶C̶o̶l̶a̶ ̶D̶r̶i̶n̶k̶ ̶t̶o̶ ̶t̶h̶e̶ ̶B̶e̶e̶f̶ ̶B̶u̶r̶g̶e̶r̶";
+      totalprice += 2;
+      document.getElementById("TotalCheckoutPrice").innerHTML =
+        "$" + totalprice;
+    } else if (id == 1 && stage2Complete == false && stage1Complete) {
+      stage2Complete = true;
+      stageActive = false;
+      if (isconfirmed) {
+        document.getElementById("item10").style.backgroundColor = "transparent";
+        document.getElementById("item11").style.backgroundColor = "transparent";
+        document.getElementById("item12").style.backgroundColor = "transparent";
+        document.getElementById("item13").style.backgroundColor = "transparent";
+        document.getElementById("burger-component").style.display = "none";
+        document.getElementById("bacon-burger").style.display = "none";
+        document.getElementById("cheese-burger").style.display = "none";
+        document.getElementById("chicken-deluxe").style.display = "none";
+        document.getElementById("fries").style.display = "none";
+        document.getElementById("hot-fries").style.display = "none";
+        document.getElementById("coca-cola").style.display = "none";
       }
-      totalprice += 2
-      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
-    } else if (id == 1) {
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original (for Cheese Burger)</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
-      cheeseCounter -= 1;
-      if (cheeseCounter == 0) {
-        document.getElementById("cheese-burger-task").innerHTML =
-          "2̶x̶ ̶F̶r̶e̶n̶c̶h̶ ̶F̶r̶i̶e̶s̶ ̶O̶r̶i̶g̶i̶n̶a̶l̶";
-      }
+      document.getElementById("cheese-burger-task").innerHTML =
+        "A̶d̶d̶ ̶F̶r̶e̶n̶c̶h̶ ̶F̶r̶i̶e̶s̶ ̶O̶r̶i̶g̶i̶n̶a̶l̶ ̶t̶o̶ ̶t̶h̶e̶ ̶C̶h̶e̶e̶s̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       totalprice += 2.5;
-      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
-    } else if (id == 2) {
+      document.getElementById("TotalCheckoutPrice").innerHTML =
+        "$" + totalprice;
+    } else if (
+      id == 2 &&
+      stage3Complete == false &&
+      stage2Complete &&
+      stage1Complete
+    ) {
+      stage3Complete = true;
+      stageActive = false;
+      if (isconfirmed) {
+        document.getElementById("item10").style.backgroundColor = "transparent";
+        document.getElementById("item11").style.backgroundColor = "transparent";
+        document.getElementById("item12").style.backgroundColor = "transparent";
+        document.getElementById("item13").style.backgroundColor = "transparent";
+        document.getElementById("burger-component").style.display = "none";
+        document.getElementById("bacon-burger").style.display = "none";
+        document.getElementById("cheese-burger").style.display = "none";
+        document.getElementById("chicken-deluxe").style.display = "none";
+        document.getElementById("fries").style.display = "none";
+        document.getElementById("hot-fries").style.display = "none";
+        document.getElementById("coca-cola").style.display = "none";
+      }
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/drink/slushie.png"><div class="detail-item"><h5 style="margin-bottom:10px">Rainbow Slushie (for Deluxe Cheese Burger)</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
-      friesCounter -= 1;
-      if (friesCounter == 0) {
-        document.getElementById("french-fries-task").innerHTML =
-          "1̶x̶ ̶R̶a̶i̶n̶b̶o̶w̶ ̶S̶l̶u̶s̶h̶i̶e̶";
-      }
+      document.getElementById("french-fries-task").innerHTML =
+        "A̶d̶d̶ ̶R̶a̶i̶n̶b̶o̶w̶ ̶S̶l̶u̶s̶h̶i̶e̶ ̶t̶o̶ ̶t̶h̶e̶ ̶D̶e̶l̶u̶x̶e̶ ̶C̶h̶e̶e̶s̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       totalprice += 1.5;
-      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
-    } else if (id == 3) {
+      document.getElementById("TotalCheckoutPrice").innerHTML =
+        "$" + totalprice;
+    } else if (
+      id == 3 &&
+      stage4Complete == false &&
+      stage3Complete &&
+      stage2Complete &&
+      stage1Complete
+    ) {
+      stage4Complete = true;
+      stageActive = false;
+      if (isconfirmed) {
+        document.getElementById("item10").style.backgroundColor = "transparent";
+        document.getElementById("item11").style.backgroundColor = "transparent";
+        document.getElementById("item12").style.backgroundColor = "transparent";
+        document.getElementById("item13").style.backgroundColor = "transparent";
+        document.getElementById("burger-component").style.display = "none";
+        document.getElementById("bacon-burger").style.display = "none";
+        document.getElementById("cheese-burger").style.display = "none";
+        document.getElementById("chicken-deluxe").style.display = "none";
+        document.getElementById("fries").style.display = "none";
+        document.getElementById("hot-fries").style.display = "none";
+        document.getElementById("coca-cola").style.display = "none";
+      }
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/chicken/deluxe-1.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chicken Deluxe (for Pineapple Burger)</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
-      colaCounter -= 1;
-      if (colaCounter == 0) {
-        document.getElementById("coca-cola-task").innerHTML =
-          "2̶x̶ ̶C̶h̶i̶c̶k̶e̶n̶ ̶D̶e̶l̶u̶x̶e̶";
-      }
+      document.getElementById("coca-cola-task").innerHTML =
+        "A̶d̶d̶ ̶C̶h̶i̶c̶k̶e̶n̶ ̶D̶e̶l̶u̶x̶e̶ ̶t̶o̶ ̶t̶h̶e̶ ̶P̶i̶n̶e̶a̶p̶p̶l̶e̶ ̶B̶u̶r̶g̶e̶r̶";
       totalprice += 3;
-      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
+      document.getElementById("TotalCheckoutPrice").innerHTML =
+        "$" + totalprice;
     }
   }
 }
@@ -292,7 +341,7 @@ function disableDrag() {
   // document.getElementById('chipcount').innerHTML= chips;
   // document.getElementById('colacount').innerHTML= cola;
   document.getElementById("controls").innerHTML =
-    'Add the following to the order:<ul><li id="beef-burger-task">1x Coca Cola Drink</li><li id="cheese-burger-task">2x French Fries Original</li><li id="french-fries-task">1x Rainbow Slushie</li><li id="coca-cola-task">2x Chicken Deluxe</li><li>Once everything has been added to the order, press the "Checkout" button.</li>';
+    'Complete the order by adding the following sides (must be done in the correct order):<ul><li id="beef-burger-task">Add Coca Cola Drink to the Beef Burger</li><li id="cheese-burger-task">Add French Fries Original to the Cheese Burger</li><li id="french-fries-task">Add Rainbow Slushie to the Deluxe Cheese Burger</li><li id="coca-cola-task">Add Chicken Deluxe to the Pineapple Burger</li><li>Hit the "Checkout" button to complete the order</li>';
   document.getElementById("controls").style.lineHeight = "1.6";
   document.getElementById("header2").innerHTML = "Task to Complete";
   document.getElementById("controls").style.lineHeight = "1.6";
@@ -359,13 +408,7 @@ function addPickles() {
 }
 
 function finish() {
-  if (
-    taskMode &&
-    beefCounter <= 0 &&
-    cheeseCounter <= 0 &&
-    friesCounter <= 0 &&
-    colaCounter <= 0
-  ) {
+  if (stage4Complete && stage1Complete && stage2Complete && stage3Complete) {
     confirmed = true;
   }
 }
@@ -466,16 +509,63 @@ function fetch_data_by_task(taskId) {
     .catch((err) => {
       console.log(err);
     });
-    
 }
 
-function hadouken(id){
-  document.getElementById(id).style.backgroundColor = "red";
-  document.getElementById("burger-component").style.display = "block";
-  document.getElementById("bacon-burger").style.display = "block";
-  document.getElementById("cheese-burger").style.display = "block";
-  document.getElementById("chicken-deluxe").style.display = "block";
-  document.getElementById("fries").style.display = "block";
-  document.getElementById("hot-fries").style.display = "block";
-  document.getElementById("coca-cola").style.display = "block";
+let stageActive = false;
+
+function hadouken(id) {
+  if (stageActive == false && taskMode) {
+    if (id == "item10" && stage1Complete == false) {
+      stageActive = true;
+      document.getElementById(id).style.backgroundColor = "#e3a34c";
+      document.getElementById("burger-component").style.display = "block";
+      document.getElementById("bacon-burger").style.display = "block";
+      document.getElementById("cheese-burger").style.display = "block";
+      document.getElementById("chicken-deluxe").style.display = "block";
+      document.getElementById("fries").style.display = "block";
+      document.getElementById("hot-fries").style.display = "block";
+      document.getElementById("coca-cola").style.display = "block";
+    } else if (id == "item11" && stage2Complete == false && stage1Complete) {
+      stageActive = true;
+      document.getElementById(id).style.backgroundColor = "#e3a34c";
+      document.getElementById("burger-component").style.display = "block";
+      document.getElementById("bacon-burger").style.display = "block";
+      document.getElementById("cheese-burger").style.display = "block";
+      document.getElementById("chicken-deluxe").style.display = "block";
+      document.getElementById("fries").style.display = "block";
+      document.getElementById("hot-fries").style.display = "block";
+      document.getElementById("coca-cola").style.display = "block";
+    } else if (
+      id == "item12" &&
+      stage3Complete == false &&
+      stage2Complete &&
+      stage1Complete
+    ) {
+      stageActive = true;
+      document.getElementById(id).style.backgroundColor = "#e3a34c";
+      document.getElementById("burger-component").style.display = "block";
+      document.getElementById("bacon-burger").style.display = "block";
+      document.getElementById("cheese-burger").style.display = "block";
+      document.getElementById("chicken-deluxe").style.display = "block";
+      document.getElementById("fries").style.display = "block";
+      document.getElementById("hot-fries").style.display = "block";
+      document.getElementById("coca-cola").style.display = "block";
+    } else if (
+      id == "item13" &&
+      stage4Complete == false &&
+      stage3Complete &&
+      stage2Complete &&
+      stage1Complete
+    ) {
+      stageActive = true;
+      document.getElementById(id).style.backgroundColor = "#e3a34c";
+      document.getElementById("burger-component").style.display = "block";
+      document.getElementById("bacon-burger").style.display = "block";
+      document.getElementById("cheese-burger").style.display = "block";
+      document.getElementById("chicken-deluxe").style.display = "block";
+      document.getElementById("fries").style.display = "block";
+      document.getElementById("hot-fries").style.display = "block";
+      document.getElementById("coca-cola").style.display = "block";
+    }
+  }
 }
