@@ -552,7 +552,9 @@ function downloadData() {
   })
     .then((resp) => resp.json())
     .then((data) => {
-      var content = JSON.stringify(data);
+      var content = JSON.stringify({
+        data: data.data,
+      });
       var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
       const fileName = username + "_data.json";
       saveAs(blob, fileName);
