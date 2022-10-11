@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fast food</title>
+    <title>UX Designer - Task 3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -10,14 +10,124 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/interactjs@latest"></script>
-    <script src="js/combos.js"></script>
 
-    <link rel="stylesheet" href="css/ordering/ordering.css" type="text/css" />
+    <link rel="stylesheet" href="css/combos/combos.css" type="text/css" />
   </head>
 
   <body>
+    <div id="burger-component" class="resize-drag menu">
+      <h3>Please choose one Burger</h3>
+    </div>
+    <div id="burger-component" class="resize-drag menu">
+      <h3>Please choose one Side</h3>
+    </div>
+    <div id="burger-component" class="resize-drag menu">
+      <h3>Please choose one Drink</h3>
+    </div>
+
+    <div class="w3-container">
+      <div id="id02" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 850px"
+        >
+          <h1 id="header" style="margin: 10px">Tutorial - Step 1, Task 3</h1>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Now that you have designed the main ordering menu as well as the
+            checkout menu, it's time to move onto the final part of the kiosk.
+            This final task will entail you designing a combos ordering menu.
+            This task is similar to Task 1, however, you now have three extra
+            combo components to add to your design.
+          </p>
+          <div class="w3-center">
+            <br />
+            <img src="img/tutorial5.gif" alt="Avatar" style="width: 95%" />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
+            Shown above is an example of how these new combo components can be
+            added.
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id02').style.display='none'; return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Start Designing
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id03" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 850px"
+        >
+          <h1 id="header" style="margin: 10px">Tutorial - Step 2, Task 3</h1>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Now that your design has been made, it's time to test it out! You
+            will be given a set of items you need to add to an order.
+          </p>
+          <div class="w3-center">
+            <br />
+            <img src="img/tutorial6.gif" alt="Avatar" style="width: 95%" />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px; margin-top: 20px">
+            Once you've added all the appropriate items to the order, the timer
+            will stop and you will have finished the experiment.
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id03').style.display='none'; disableDrag(); return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Start Testing
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      <div id="id04" class="w3-modal">
+        <div
+          class="w3-modal-content w3-card-4 w3-animate-zoom"
+          style="max-width: 600px"
+        >
+          <h1 id="taskcomplete" style="margin: 10px">
+            Task 3 Complete - Your Time: ...s
+          </h1>
+          <div class="w3-center">
+            <br />
+            <img
+              src="img/thumbsup.PNG"
+              alt="Avatar"
+              style="width: 95%; margin-bottom: 20px"
+            />
+          </div>
+          <p style="margin-left: 20px; margin-right: 20px">
+            Great job! Task 3 has been completed and... that's it, we hope you
+            enjoyed participating in this experiment!
+          </p>
+          <form
+            class="w3-container"
+            onSubmit="document.getElementById('id04').style.display='none'; disableDrag(); window.location = 'index.html'; return false;"
+          >
+            <div class="w3-section">
+              <button class="w3-button w3-block w3-green w3-section w3-padding">
+                Back To Start
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <div id="sidebar">
-      <h1 id="header">Components</h1>
+      <h1 id="header2">Components</h1>
       <div id="controls">
         <button
           id="reset"
@@ -31,7 +141,7 @@
           id="confirm"
           type="button"
           class="btn-md fill"
-          onClick="disableDrag();"
+          onClick="openTimerTutorial();"
         >
           Confirm
         </button>
@@ -39,15 +149,15 @@
     </div>
     <div id="workspace">
       <h1 id="header">Ordering Terminal</h1>
+      <div id="outlined-box"></div>
     </div>
-    <div id="beef-burger" class="resize-drag menu">
+    <div id="beef-burger" class="resize-drag menu" onClick="addItemMenu(0)">
       <img src="img/burger/beef.png" alt="beef" />
       <h2 class="price">$4.7</h2>
       <div class="desc-item">
         <h3>Beef burger</h3>
         <p>Typical burger material</p>
       </div>
-      <button type="button" onClick="addItemMenu(0)">&#43;</button>
     </div>
     <div id="chicken-burger" class="resize-drag menu">
       <img src="img/burger/double-chicken.png" alt="chicken" />
@@ -56,7 +166,6 @@
         <h3>Chicken deluxe</h3>
         <p>What happened to the chicken that crossed the road?</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
     <div id="bacon-burger" class="resize-drag menu">
       <img src="img/drink/slushie.png" alt="beef" />
@@ -65,25 +174,14 @@
         <h3>Rainbow Slushie</h3>
         <p>A Colourful Sensation!</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
-    <div id="cheese-burger" class="resize-drag menu">
+    <div id="cheese-burger" class="resize-drag menu" onClick="addItemMenu(1)">
       <img src="img/burger/cheeseburger.png" alt="chesee" />
       <h2 class="price">$4.8</h2>
       <div class="desc-item">
         <h3>cheese burger</h3>
         <p>Mmm Delicious</p>
       </div>
-      <button type="button" onClick="addItemMenu(1)">&#43;</button>
-    </div>
-    <div id="burger-component" class="resize-drag menu">
-        <h3>Please choose one Burger</h3>
-    </div>
-    <div id="burger-component" class="resize-drag menu">
-        <h3>Please choose one Side</h3>
-    </div>
-    <div id="burger-component" class="resize-drag menu">
-        <h3>Please choose one Drink</h3>
     </div>
     <div id="chicken-deluxe" class="resize-drag menu">
       <img src="img/chicken/deluxe-2.png" alt="thighs" />
@@ -92,16 +190,14 @@
         <h3>Chicken deluxe 2</h3>
         <p>For the chicken lovers!</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
-    <div id="fries" class="resize-drag menu">
+    <div id="fries" class="resize-drag menu" onClick="addItemMenu(2)">
       <img src="img/fries/fries-4.png" alt="original" />
       <h2 class="price">$12.5</h2>
       <div class="desc-item">
         <h3>French fries original</h3>
         <p>French Fries Flavour</p>
       </div>
-      <button type="button" onClick="addItemMenu(2)">&#43;</button>
     </div>
     <div id="hot-fries" class="resize-drag menu">
       <img src="img/fries/hot-fries.png" alt="hot" />
@@ -110,16 +206,14 @@
         <h3>Hot Spicy fries</h3>
         <p>Crispy Fries</p>
       </div>
-      <button type="button">&#43;</button>
     </div>
-    <div id="coca-cola" class="resize-drag menu">
+    <div id="coca-cola" class="resize-drag menu" onClick="addItemMenu(3)">
       <img src="img/drink/coca-cola.png" alt="coca cola" />
       <h2 class="price">$2.5</h2>
       <div class="desc-item">
         <h3>Coca cola drink</h3>
         <p>This is a coca-cola</p>
       </div>
-      <button type="button" onClick="addItemMenu(3)">&#43;</button>
     </div>
     <div id="order-menu" class="resize-drag order">
       <div class="order-list">
@@ -141,10 +235,8 @@
             <h3 id="TotalCheckoutPrice">$0</h3>
           </div>
         </div>
-        <div class="checkout-detail">
-          <button type="button" class="btn-md fill">checkout</button>
-        </div>
       </div>
     </div>
   </body>
+  <script src="js/combos.js"></script>
 </html>
