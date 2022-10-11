@@ -2,6 +2,7 @@ let totalprice = 13.8;
 let coke = 0;
 let chips = 0;
 let confirmed = false;
+let isconfirmed = false;
 // target elements with the "draggable" class
 interact(".draggable").draggable({
   // enable inertial throwing
@@ -184,6 +185,7 @@ window.addEventListener("click", (event) => {
 });
 
 function openTimerTutorial() {
+  isconfirmed = true;
   document.getElementById("id03").style.display = "block";
   document.getElementById("burger-component").style.display = "none";
   document.getElementById("bacon-burger").style.display = "none";
@@ -226,10 +228,24 @@ function myTimer() {
 }
 
 function addItemMenu(id) {
+  if (isconfirmed){
+    document.getElementById("item10").style.backgroundColor = "transparent";
+    document.getElementById("item11").style.backgroundColor = "transparent";
+    document.getElementById("item12").style.backgroundColor = "transparent";
+    document.getElementById("item13").style.backgroundColor = "transparent";
+    document.getElementById("burger-component").style.display = "none";
+    document.getElementById("bacon-burger").style.display = "none";
+    document.getElementById("cheese-burger").style.display = "none";
+    document.getElementById("chicken-deluxe").style.display = "none";
+    document.getElementById("fries").style.display = "none";
+    document.getElementById("hot-fries").style.display = "none";
+    document.getElementById("coca-cola").style.display = "none";
+  }
+  
   if (taskMode) {
     if (id == 0) {
       document.getElementById("menu-list").innerHTML +=
-        '<div class="order-item"><div class="details"><img src="img/drink/coca-cola.png"><div class="detail-item"><h5 style="margin-bottom:10px">Coca Cola</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.7</h2></div>';
+        '<div class="order-item"><div class="details"><img src="img/drink/coca-cola.png"><div class="detail-item"><h5 style="margin-bottom:10px">Coca Cola (for Beef Burger) </h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.7</h2></div>';
       beefCounter -= 1;
       if (beefCounter == 0) {
         document.getElementById("beef-burger-task").innerHTML =
@@ -239,7 +255,7 @@ function addItemMenu(id) {
       document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     } else if (id == 1) {
       document.getElementById("menu-list").innerHTML +=
-        '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
+        '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original (for Cheese Burger)</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
       cheeseCounter -= 1;
       if (cheeseCounter == 0) {
         document.getElementById("cheese-burger-task").innerHTML =
@@ -249,7 +265,7 @@ function addItemMenu(id) {
       document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     } else if (id == 2) {
       document.getElementById("menu-list").innerHTML +=
-        '<div class="order-item"><div class="details"><img src="img/drink/slushie.png"><div class="detail-item"><h5 style="margin-bottom:10px">Rainbow Slushie</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
+        '<div class="order-item"><div class="details"><img src="img/drink/slushie.png"><div class="detail-item"><h5 style="margin-bottom:10px">Rainbow Slushie (for Deluxe Cheese Burger)</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
       friesCounter -= 1;
       if (friesCounter == 0) {
         document.getElementById("french-fries-task").innerHTML =
@@ -259,7 +275,7 @@ function addItemMenu(id) {
       document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     } else if (id == 3) {
       document.getElementById("menu-list").innerHTML +=
-        '<div class="order-item"><div class="details"><img src="img/chicken/deluxe-1.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chicken Deluxe</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
+        '<div class="order-item"><div class="details"><img src="img/chicken/deluxe-1.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chicken Deluxe (for Pineapple Burger)</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
       colaCounter -= 1;
       if (colaCounter == 0) {
         document.getElementById("coca-cola-task").innerHTML =
@@ -450,4 +466,16 @@ function fetch_data_by_task(taskId) {
     .catch((err) => {
       console.log(err);
     });
+    
+}
+
+function hadouken(id){
+  document.getElementById(id).style.backgroundColor = "red";
+  document.getElementById("burger-component").style.display = "block";
+  document.getElementById("bacon-burger").style.display = "block";
+  document.getElementById("cheese-burger").style.display = "block";
+  document.getElementById("chicken-deluxe").style.display = "block";
+  document.getElementById("fries").style.display = "block";
+  document.getElementById("hot-fries").style.display = "block";
+  document.getElementById("coca-cola").style.display = "block";
 }
