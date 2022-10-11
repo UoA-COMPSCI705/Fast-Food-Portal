@@ -1,4 +1,4 @@
-let totprice = 13.8;
+let totalprice = 13.8;
 let coke = 0;
 let chips = 0;
 let confirmed = false;
@@ -185,6 +185,13 @@ window.addEventListener("click", (event) => {
 
 function openTimerTutorial() {
   document.getElementById("id03").style.display = "block";
+  document.getElementById("burger-component").style.display = "none";
+  document.getElementById("bacon-burger").style.display = "none";
+  document.getElementById("cheese-burger").style.display = "none";
+  document.getElementById("chicken-deluxe").style.display = "none";
+  document.getElementById("fries").style.display = "none";
+  document.getElementById("hot-fries").style.display = "none";
+  document.getElementById("coca-cola").style.display = "none";
 }
 
 window.onload = stage2Alert();
@@ -229,7 +236,7 @@ function addItemMenu(id) {
           "1̶x̶ ̶C̶o̶c̶a̶ ̶C̶o̶l̶a̶ ̶D̶r̶i̶n̶k̶";
       }
       totalprice += 2
-      document.getElementById("")
+      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     } else if (id == 1) {
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/fries/fries-4.png"><div class="detail-item"><h5 style="margin-bottom:10px">French Fries Original</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$4.8</h2></div>';
@@ -238,7 +245,8 @@ function addItemMenu(id) {
         document.getElementById("cheese-burger-task").innerHTML =
           "2̶x̶ ̶F̶r̶e̶n̶c̶h̶ ̶F̶r̶i̶e̶s̶ ̶O̶r̶i̶g̶i̶n̶a̶l̶";
       }
-      totalprice += 2.5
+      totalprice += 2.5;
+      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     } else if (id == 2) {
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/drink/slushie.png"><div class="detail-item"><h5 style="margin-bottom:10px">Rainbow Slushie</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$12.5</h2></div>';
@@ -247,7 +255,8 @@ function addItemMenu(id) {
         document.getElementById("french-fries-task").innerHTML =
           "1̶x̶ ̶R̶a̶i̶n̶b̶o̶w̶ ̶S̶l̶u̶s̶h̶i̶e̶";
       }
-      totalprice += 1.5
+      totalprice += 1.5;
+      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     } else if (id == 3) {
       document.getElementById("menu-list").innerHTML +=
         '<div class="order-item"><div class="details"><img src="img/chicken/deluxe-1.png"><div class="detail-item"><h5 style="margin-bottom:10px">Chicken Deluxe</h5><a class="btn-sm min" href="javascript:void(0)" onclick="btnMinusOrder(event)"></a><small>1</small><a class="btn-sm max" href="javascript:void(0)" onclick="btnPlusOrder(event)"></a><a class="remove" href="javascript:void(0)" onclick="btnRemoveOrder(event)">delete</a></div></div><h2 class="price">$2.5</h2></div>';
@@ -256,7 +265,8 @@ function addItemMenu(id) {
         document.getElementById("coca-cola-task").innerHTML =
           "2̶x̶ ̶C̶h̶i̶c̶k̶e̶n̶ ̶D̶e̶l̶u̶x̶e̶";
       }
-      totalprice += 3
+      totalprice += 3;
+      document.getElementById("TotalCheckoutPrice").innerHTML = "$" + totalprice;
     }
   }
 }
