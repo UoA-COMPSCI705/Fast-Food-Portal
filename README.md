@@ -31,7 +31,7 @@ The setting up is quite straightforward as it is using base javascript, CSS and 
   ## Server Data Storage
   ![](https://i.postimg.cc/Vv4rm5dP/Server-Data.png)
   As seen in the database log above, the Time Taken for each task and the number of misclicks will be calculated for the Users, which is used for evaluation. 
-  All Users are able to collect their Results at the end of the Three Tasks using the "Results" Button. 
+  All Users are able to collect their Results at the end of the Three Tasks using the "Download your Results!" Button. 
   
   ## Documentation of Experiment Preperations
   This software is used in this project to determine the effect of students' knowledge about Design Considerations extending from Fitt's Law. As such, to aid the students, each of the three tasks had a walkthrough tutorial to infrom them what was to be done of them. Then, the tasks were both verbally and visually given to the student. Finally, the students themselves were asked to test their design in order to answer the research question. 
